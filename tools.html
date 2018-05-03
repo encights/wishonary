@@ -1,0 +1,869 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp">
+
+<div class="wrapper dash">
+   <header>
+       <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/l1-logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <nav class="animenu">
+                  <label for="show-menu" class="show-menu"><img src="img/menu.png"/></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                    <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                      <li><a href="#"><span>News</span></a></li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                                
+                                 <div class="row">
+                                      <div class="col-sm-4 l1-bg">
+                                          <div class="l-3"><img src="img/l1-logo.png"></div>
+                                      </div>
+                                      <div class="col-sm-8 l2-bg">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">i would like to recive 4fashion latest news </label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+   </header>
+<!------------------------
+header close
+-------------------------> 
+<div class="clearfix"></div>
+<div class="container sft tl-bg">
+    <div class="clb">
+         <div class="clbrt"><h4> COLLABORATORS (1)</h4><a href="#"> Invite</a></div>
+         <div class="clbi">
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+             <a href="#"><img src="img/c-img.png"></a>
+         </div>
+    </div>
+    
+    <div class="shw-clb">
+    <div class="page-title">
+        <h3>The Business Model Canvas</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.        </p>
+    </div>
+    
+    <section class="all-boxes">
+         <!--<div ng-controller="popupController">-->
+         <div class="key-box key-box1" ng-click="isPopupVisble=true">
+            <a href="#">
+             <h5>Key Partners</h5>
+             <p>Who are our Key Partners</p>
+             <div class="bx-number">1</div>
+            </a>
+         </div>
+         
+           <div ng-show="isPopupVisble">
+               <div class="alertBg12" data-ng-click="isPopupVisble=false"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Key Partners</h3>
+                                <p>Who are our Key Partners</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                    <a class="sl-ovl"><div class="chks"><i class="fa fa-question-circle"></i></div></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="isPopupVisble=false">X</button>
+                   </div>
+               </div>
+           </div>
+         
+        <!-- </div>-->
+<!-- one close -->          
+        <div class="prnt"> 
+         <div ng-controller="popupController">
+         <div class="key-box key-box2" ng-click="isPopupVisble()">
+            <a href="#">
+             <h5>Key Activities</h5>
+             <p>What Key Activities do our Value Propositions require</p>
+             <div class="bx-number">2</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Key Activities</h3>
+                                <p>What Key Activities do our Value Propositions require</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+         </div>
+<!-- second close -->   
+         <div ng-controller="popupController">
+         <div class="key-box key-box3" ng-click="isPopupVisble()">
+            <a href="#">
+             <h5>Key Resources</h5>
+             <p>What Key Resources do our Value Propositions require</p>
+             <div class="bx-number">3</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Key Resources</h3>
+                                <p>What Key Resources do our Value Propositions require</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+         </div>
+<!-- third close -->   
+       </div>
+         
+         <div ng-controller="popupController"> 
+         <div class="key-box key-box1" ng-click="isPopupVisble()">
+            <a href="#">
+             <h5>Value Propositions</h5>
+             <p>What value do we deliver to the customer?</p>
+             <div class="bx-number">4</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Value Propositions</h3>
+                                <p>What value do we deliver to the customer?</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+         </div>
+<!-- fourth close -->         
+       <div class="prnt"> 
+       <div ng-controller="popupController">          
+         <div class="key-box key-box2" ng-click="isPopupVisble()">
+            <a href="#">
+             <h5>Customer Relationships</h5>
+             <p>What type of relationships do our Customer Segments expect?</p>
+             <div class="bx-number">5</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Customer Relationships</h3>
+                                <p>What type of relationships do our Customer Segments expect?</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+       </div>  
+<!-- fifth close -->
+        <div ng-controller="popupController">                
+         <div class="key-box key-box3" ng-click="isPopupVisble()"> 
+            <a href="#">
+             <h5>Channels</h5>
+             <p>How do we reach our Customer Segments?</p>
+             <div class="bx-number">6</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Channels</h3>
+                                <p>How do we reach our Customer Segments?</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+        </div>
+ <!-- six close -->        
+      </div>
+              
+         <div ng-controller="popupController">   
+           <div class="key-box key-box1" ng-click="isPopupVisble()">
+            <a href="#">
+             <h5>Customers Segments</h5>
+             <p>Who are we creating value for?</p>
+             <div class="bx-number">7</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+        <h3>Customers Segments</h3>
+        <p>Who are we creating value for?</p>
+    </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+ <!-- seven close -->          
+         <div ng-controller="popupController">   
+         <div class="key-box key-box4" ng-click="isPopupVisble()">
+            <a href="#">
+             <h5>Cost Structure</h5>
+             <p>What are the important costs inherent in our business model?</p>
+             <div class="bx-number">8</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Cost Structure</h3>
+                                <p>What are the important costs inherent in our business model?</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+<!-- eight close -->             
+        <div ng-controller="popupController">     
+         <div class="key-box key-box5" ng-click="isPopupVisble()">
+            <a href="#">
+             <h5>Revenue Streams</h5>
+             <p>What value are our customers willing to pay for?</p>
+             <div class="bx-number">9</div>
+            </a>
+         </div>
+         <div ng-show="showPopup">
+               <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+               <div class="pp-bg">
+                   <div class="prf-pp">
+                       <div class="container-fluid tl-bg">
+                            <div class="page-title">
+                                <h3>Revenue Streams</h3>
+                                <p>What value are our customers willing to pay for?</p>
+                            </div>
+    
+                            <section class="bx-detail" ng-controller="popupController">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="item-s1" ng-click="boxShow=!boxShow">+ Item</div>
+                                        
+                                        <div class="item-wrap" ng-show="boxShow">
+                                             <div class="item-header">
+                                                 <div class="it-lf">
+                                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                                 <div class="it-rh">
+                                                     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i></a>
+                                                     <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="item-middle">
+                                                 <div class="it-text">
+                                                      <textarea class="editer color-0"></textarea>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="item-footer">
+                                                 <ul class="colors">
+                                                    <li class="color" ng-class="color.cls" ng-repeat="color in colors" ng-click=                                                     "getColorClass(color.cls,$event);">{{color.code}}</li>
+                                                 </ul>
+                                            </div>
+                                             
+                                        </div>
+                                        
+                                        <div class="ft-item">
+                                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>COPY TO STACK</a>
+                                            <a href="#"><i class="fa fa-scissors" aria-hidden="true"></i>MOVE TO STACK</a>
+                                            <a href="#"><i class="fa fa-check-square-o" aria-hidden="true"></i>DONE</a>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                        </section>
+                    </div>
+                    <button id="btnCanceRemove" class="cancel cancel-ep" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                   </div>
+               </div>
+           </div>
+        </div>
+<!-- nine close -->           
+       
+         
+    </section>
+    </div>
+    </div>
+
+<!-----------------------
+mib
+-------------------------> 
+</div>
+
+ <script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+
+</body>
+</html>
+

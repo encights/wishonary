@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>HTML</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="css/main.css" rel="stylesheet" type="text/css" />
+      <link href="font/stylesheet.css" rel="stylesheet" type="text/css" />
+      <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+      <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+   </head>
+   <body class="bg-31" ng-app="wishonaryApp">
+      <div class="header_top_share">
+        <ul>
+           <li><a class="f-1" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a class="tw-1" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+             <li><a class="g-1" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+              <li><a class="in-1" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+               <li><a class="yt-1" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li><a class="pct-1" href="#"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                 <li><a class="msg-1" href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+      <header>
+         <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <nav class="animenu">
+                  <label for="show-menu" class="show-menu"><img src="img/menu.png"/></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                    <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                      <li><a href="#"><span>News</span></a></li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                                
+                                 <div class="row">
+                                      <div class="col-sm-4 l1-bg">
+                                          <div class="l-3"><img src="img/l1-logo.png"></div>
+                                      </div>
+                                      <div class="col-sm-8 l2-bg">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">i would like to recive 4fashion latest news </label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+      </header>
+      
+<!-----------------------------
+header end
+------------------------------> 
+<div class="clearfix"></div>
+<div class="bls"><img src="img/top-bs.jpg"></div>       
+<div class="container">
+    <div class="col-sm-12">
+        <div class="all-cover all-cover23">
+            <div class="ps-date">
+                <a href="#">Posted on May 5th 2014</a>
+                <a href="#">By Rob Blogger</a>
+                <a href="#">6 Comments</a>
+                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 81</a>
+                <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 15</a>
+                <a href="#" class="pull-right im-1"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+            </div>
+            
+            <div class="cnt-11">
+                <h3>Contrary to popular belief, Lorem Ipsum is not simply random text.</h3>
+                <img src="img/bs1.jpg">
+                <p class="tp-spc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
+                
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                </p>
+                
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                </p>
+              
+                
+                <div class="br-sc">
+                    <div class="bl-icon">
+                         <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                         </ul>
+                         
+                         <ul class="pull-right n-rm"><li class="ch-s"><a href="#">Raed More</a></li></ul>
+                     </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="all-cover all-cover23 all-cover71">
+            <div class="ps-date">
+                <a href="#">Posted on May 5th 2014</a>
+                <a href="#">By Rob Blogger</a>
+                <a href="#">6 Comments</a>
+                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 81</a>
+                <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 15</a>
+                <a href="#" class="pull-right im-1"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+            </div>
+            
+            <div class="cnt-11">
+                <h3>Contrary to popular belief, Lorem Ipsum is not simply random text.</h3>
+                <img src="img/vd1.jpg">
+                <p class="tp-spc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
+                
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                </p>
+                
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                </p>
+              
+                
+                <div class="br-sc">
+                    <div class="bl-icon">
+                         <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                         </ul>
+                         
+                         <ul class="pull-right n-rm"><li class="ch-s"><a href="#">Raed More</a></li></ul>
+                     </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="all-cover all-cover23 all-cover71">
+            <div class="ps-date">
+                <a href="#">Posted on May 5th 2014</a>
+                <a href="#">By Rob Blogger</a>
+                <a href="#">6 Comments</a>
+                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 81</a>
+                <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> 15</a>
+                <a href="#" class="pull-right im-1"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+            </div>
+            
+            <div class="cnt-11">
+                <h3>Contrary to popular belief, Lorem Ipsum is not simply random text.</h3>
+                <img src="img/vd2.jpg">
+                <p class="tp-spc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
+                
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                </p>
+                
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                </p>
+              
+                
+                <div class="br-sc">
+                    <div class="bl-icon">
+                         <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                         </ul>
+                         
+                         <ul class="pull-right n-rm"><li class="ch-s"><a href="#">Raed More</a></li></ul>
+                     </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="all-cover all-cover23 all-cover71">
+             <div class="page">
+                   <ul>
+                      <li class="b-n"><a href="#"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Previous Page</a></li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li class="b-n"><a href="#">Next Page<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></li>
+                    </ul>
+               </div>
+        </div>
+        
+        
+        
+        </div>
+        
+       
+    
+    
+    
+</div>
+</div>
+<!----------------------------
+section3 end
+------------------------------> 
+
+
+      <footer>
+        <div class="container">
+         
+          <div class="row ft-nav">
+            
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>Investor</h2>
+           
+               <li><a href="#">Browse investment oppportunities tools services</a></li>
+                <br>
+               <h2>About</h2>
+               <li><a href="#">The Company</a></li>
+                 <li><a href="#">Management team</a></li>
+                   <li><a href="#">Press centre</a></li>
+                     <li><a href="#">Carrer</a></li>
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>ENTREPRENEUR</h2>
+           
+               <li><a href="#">Post your startup</a></li>
+                 <li><a href="#">Browse Investors</a></li>
+                   <li><a href="#">Tools and services</a></li>
+                     <li><a href="#">Post Jobs</a></li> <br>
+
+                     <h2>Workshops & Events</h2>
+                        <li><a href="#">upcoming workshops</a></li>
+                     
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>Legal and Compliance</h2>
+           
+               <li><a href="#">Terms and Condition</a></li>
+                 <li><a href="#">Privacy Policy</a></li>
+                   <li><a href="#">Risk and Warning</a></li>
+                     <li><a href="#">Disclaimer</a></li> <br>
+
+                     <h2>Support</h2>
+                        <li><a href="#">Learning Centere</a></li>
+                           <li><a href="#">Blog</a></li>
+                              <li><a href="#">Contact us</a></li>
+                                 <li><a href="#">Report Bug</a></li>
+                               
+                     
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3">
+          
+           
+           
+
+            <h2>Follow us</h2>
+            <div class="social">
+     <a href="#"><i class="fa fa-facebook"></i></a> 
+     <a href="#"><i class="fa fa-twitter"></i></a>
+     <a href="#"><i class="fa fa-google-plus"></i></a>
+     <a href="#"><i class="fa fa-instagram"></i></a>
+       </div>  <br>
+
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter</p>
+            
+            <form class="nst1">
+              <input type="text" class="nlt" placeholder="Email"/>
+              <button class="nlt-sbt"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+            </form>
+
+            </div>
+          </div>
+       
+          
+           
+          
+        </div>
+        
+      
+      
+      </footer>
+      <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+        <p>Copyright@2016wishonary PVT.LTD. All right Reserved.<p>
+        </div>
+      </div>
+      </div>
+      
+      
+      <!--  Header  END  -->
+      <!--   Slider  -->
+      <!--  Script  -->
+     <script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+      <!--  Script END  -->
+   </body>
+</html>

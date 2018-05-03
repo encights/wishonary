@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp">
+
+<div class="wrapper">
+   <header>
+       <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+               <nav id="navbar" class="animenu navbar-collapse collapse">
+                  <label for="show-menu" class="show-menu"><span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                  <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                  <li><a href="#"><span>News</span></a></li>
+                  <li ng-controller="popupController"><a href="#"><span>Help</span></a>
+                      <ul class="drp-tp">
+                         <li><a href="#" ng-click="isPopupVisble()">Tour this page</a></li>
+                      </ul>
+                      <div ng-show="showPopup">
+                         <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+                         <div class="ttp" data-ng-click="hidePrompt()">
+                             <div class="container">
+                                 <div class="tp-l"><img src="img/ar-1.png"><p>Lorem Ipsum is simply</p></div>
+                                 <div class="tp-m"><img src="img/ar-3.png"><p>Lorem Ipsum</p></div>
+                                 <div class="tp-r"><img src="img/ar-2.png"><p>Lorem Ipsum dolor</p></div>
+                                 <button class="ogt">Okay. Got it.</button>
+                             </div>
+                         </div>
+                       </div>
+                  </li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                                
+                                 <div class="row">
+                                      <div class="col-sm-4 l1-bg">
+                                          <div class="l-3"><img src="img/l1-logo.png"></div>
+                                      </div>
+                                      <div class="col-sm-8 l2-bg">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">i would like to recive 4fashion latest news </label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+   </header>
+    
+<!------------------------
+header close
+------------------------->  
+<div class="clearfix"></div>  
+<div class="sidebar-panel">
+        <div class="menu-btn">
+            <a href="#">+</a>
+        </div>
+        <div class="outer-ic">
+           <ul>
+              <li><a href="#"><i class="fa fa-user-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-heart"></i></a></li>
+              <li><a href="#"><i class="fa fa-align-justify"></i></a></li>
+              <li><a href="#"><i class="fa fa-barcode"></i></a></li>
+              <li><a href="#"><i class="fa fa-users"></i></a></li>
+           </ul>
+        </div>
+        <ul class="dtl">
+          <li><a href="#"><i class="fa fa-user-plus"></i>Lorem Ipsum</a></li>
+          <li><a href="#"><i class="fa fa-heart"></i>Lorem Ipsum</a></li>
+          <li><a href="#"><i class="fa fa-align-justify"></i>Lorem Ipsum</a></li>
+          <li><a href="#"><i class="fa fa-barcode"></i>Lorem Ipsum</a></li>
+          <li><a href="#"><i class="fa fa-users"></i>Lorem Ipsum</a></li>
+        </ul>
+     </div>
+     
+<div class="container stp">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-xs-6 xs-sgl">
+                         <div class="al-cm">
+                            <div class="cm-m">
+                                <div class="cmp"><img src="img/comp1.jpg"></div>
+                                 <h5>Lorem Ipsum</h5>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text.</p>
+                                 <div class="xs-1">
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                 </div>
+                                 <span>Film |   <i class="fa fa-map-marker" aria-hidden="true"></i> New York , NY</span>
+                                 <div class="nnf">INVESTOR</div>
+                            </div>
+                            
+                         </div>
+                     </div>
+                     
+          <div class="col-sm-6 col-md-4 col-xs-6 xs-sgl">
+                         <div class="al-cm">
+                            <div class="cm-m">
+                                <div class="cmp"><img src="img/comp2.jpg"></div>
+                                 <h5>Lorem Ipsum</h5>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text.</p>
+                                 <div class="xs-1">
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                 </div>
+                                 <span>Film |   <i class="fa fa-map-marker" aria-hidden="true"></i> New York , NY</span>
+                                 <div class="nnf">MENTOR</div>
+                            </div>
+                            
+                         </div>
+                     </div>
+                     
+          <div class="col-sm-6 col-md-4 col-xs-6 xs-sgl">
+                         <div class="al-cm">
+                            <div class="cm-m">
+                                <div class="cmp"><img src="img/comp3.jpg"></div>
+                                 <h5>Lorem Ipsum</h5>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text.</p>
+                                 <div class="xs-1">
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                 </div>
+                                 <span>Film |   <i class="fa fa-map-marker" aria-hidden="true"></i> New York , NY</span>
+                                 <div class="nnf">Entrepreneur</div>
+                            </div>
+                            
+                         </div>
+                     </div>
+                     
+          <div class="col-sm-6 col-md-4 col-xs-6 xs-sgl">
+                         <div class="al-cm">
+                            <div class="cm-m">
+                                <div class="cmp"><img src="img/comp1.jpg"></div>
+                                 <h5>Lorem Ipsum</h5>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text.</p>
+                                 <div class="xs-1">
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                 </div>
+                                 <span>Film |   <i class="fa fa-map-marker" aria-hidden="true"></i> New York , NY</span>
+                                 <div class="nnf">INVESTOR</div>
+                            </div>
+                            
+                         </div>
+                     </div>
+                     
+          <div class="col-sm-6 col-md-4 col-xs-6 xs-sgl">
+                         <div class="al-cm">
+                            <div class="cm-m">
+                                <div class="cmp"><img src="img/comp2.jpg"></div>
+                                 <h5>Lorem Ipsum</h5>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text.</p>
+                                 <div class="xs-1">
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                 </div>
+                                 <span>Film |   <i class="fa fa-map-marker" aria-hidden="true"></i> New York , NY</span>
+                                 <div class="nnf">MENTOR</div>
+                            </div>
+                            
+                         </div>
+                     </div>
+                     
+          <div class="col-sm-6 col-md-4 col-xs-6 xs-sgl">
+                         <div class="al-cm">
+                            <div class="cm-m">
+                                <div class="cmp"><img src="img/comp3.jpg"></div>
+                                 <h5>Lorem Ipsum</h5>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text.</p>
+                                 <div class="xs-1">
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                     <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                      <div class="tooltip1"><img src="img/autor.png">
+                                          <p class="tooltiptext1"> Lorem Ipsum is simply dummy text of the printing text printing text 
+                                           of the printing and typesetting industry"</p>
+                                      </div>
+                                 </div>
+                                 <span>Film |   <i class="fa fa-map-marker" aria-hidden="true"></i> New York , NY</span>
+                                 <div class="nnf">Entrepreneur</div>
+                            </div>
+                            
+                         </div>
+                     </div>           
+        </div>
+     
+</div>
+
+</div>
+
+ <script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+
+
+</body>
+</html>
+

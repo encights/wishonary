@@ -1,0 +1,821 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/pie-chart.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp">
+
+<div class="wrapper">
+   <header>
+       <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+               <nav id="navbar" class="animenu navbar-collapse collapse">
+                  <label for="show-menu" class="show-menu"><span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                  <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                  <li><a href="#"><span>News</span></a></li>
+                  <li ng-controller="popupController"><a href="#"><span>Help</span></a>
+                      <ul class="drp-tp">
+                         <li><a href="#" ng-click="isPopupVisble()">Tour this page</a></li>
+                      </ul>
+                      <div ng-show="showPopup">
+                         <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+                         <div class="ttp" data-ng-click="hidePrompt()">
+                             <div class="container">
+                                 <div class="tp-l"><img src="img/ar-1.png"><p>Lorem Ipsum is simply</p></div>
+                                 <div class="tp-m"><img src="img/ar-3.png"><p>Lorem Ipsum</p></div>
+                                 <div class="tp-r"><img src="img/ar-2.png"><p>Lorem Ipsum dolor</p></div>
+                                 <button class="ogt">Okay. Got it.</button>
+                             </div>
+                         </div>
+                       </div>
+                  </li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                               <div class="in-lg"> 
+                                 <div class="row">
+                                      <div class="col-sm-12">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">i would like to recive 4fashion latest news </label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                 <!--  <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>-->
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                               </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+   </header>
+    
+<!------------------------
+header close
+------------------------->  
+<div class="clearfix"></div>  
+<div class="container sft up-pd">
+    <div class="tp-sect1">
+        <h3>Welcome to www.wishonary.com</h3>
+        
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+        the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+
+<div class="tabbed">
+   <ul class="strp-tbs" ng-init="tab = 4">
+      <li ng-class="{active:tab===1}"><a href="" ng-click="tab = 1">Step 1</a></li>
+      <li ng-class="{active:tab===2}"><a href="" ng-click="tab = 2">Step 2</a></li>
+      <li ng-class="{active:tab===3}"><a href="" ng-click="tab = 3">Step 3</a></li>
+      <li ng-class="{active:tab===4}"><a href="" ng-click="tab = 4">Step 4</a></li>
+      <li ng-class="{active:tab===5}"><a href="" ng-click="tab = 5">Step 5</a></li>
+   </ul> 
+</div>
+
+     
+<div class="show-sect">
+    <div ng-show="tab === 1">
+        <div class="container">
+           <h4 class="tab-heading">One line Elevator Pitch</h4>
+           <form>
+              <div class="row">
+                  <div class="f1-st col-sm-6">
+                      <h5>My Company</h5><div class="iner-st" id="cmp"><input type="text"><span>Name of the Company</span></div>
+                       <div id="step-1" class="shw-fcs">Write the name of the company</div>
+                   </div>
+                
+                  <div class="f1-st col-sm-6">
+                      <h5>is developing</h5><div class="iner-st" id="d-of"><input type="text"><span>A defined offering</span></div>
+                      <div id="step-2" class="shw-fcs">The "defined offering" needs to be short, simple and capable of being understood by everyone,
+                      like "a website," "a mobile application," "hardware," or "desktop software."</div>
+                  </div>
+              </div>
+              
+               <div class="row">  
+                 <div class="f1-st col-sm-6">
+                      <h5>to help</h5><div class="iner-st" id="d-au"><input type="text"><span>A defined audience</span></div>
+                      <div id="step-3" class="shw-fcs">The "defined audience" is the initial group of people that you will market your offering to.
+                       In the case of consumer applications, it is usually a demographic, such as "women age 25 to 35 years old." In the case of 
+                       business applications, it is usually a job function at a type of corporation, such as "system administrators at medium sized 
+                       technology businesses."</div>
+                   </div>
+                   
+                    
+                  <div class="f1-st col-sm-6">
+                       <div class="blank iner-st" id="sl-pr"><input type="text"><span>solve a problem</span></div>
+                       <div id="step-4" class="shw-fcs">Now that you have an offering helping an audience, you need to "solve a problem." The problem 
+                      needs to be something that everyone understands, such as "reduce the time collecting bill payments" or "engage in an immersive
+                       entertainment experience."</div>
+                  </div>
+              </div>
+              
+              <div class="row">
+                  <div class="f1-st col-sm-6">
+                      <h5>with</h5><div class="iner-st" id="ss">
+                      <input type="text"><span>Secret sauce</span></div>
+                       <div id="step-5" class="shw-fcs">The final component, the "secret sauce," adds your unique approach to solving the problem
+                       and demonstrates a mastery of the market. Some examples are "by sending automated email alerts based on analysis of highest 
+                       response times" or "with virtual worlds constructed in reaction to the movements of the players."</div>
+                   </div>
+              </div>
+              
+              <div class="example">
+                  <h4>Example</h4>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+                  text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              </div>
+              
+               
+               <div class="row">
+                    <div class="col-sm-8">
+                        <h4 class="tab-heading">Company Detail</h4>
+                        <div class="row">
+                            <div class="col-sm-6 up-frm">
+                                 <label>Primary Industry</label>
+                                 <select>
+                                     <option>--select--</option>
+                                 </select>
+                             </div>
+                             
+                             <div class="col-sm-6 up-frm">
+                                 <label>Location</label>
+                                 <input type="text" placeholder="Location">
+                             </div>
+                             
+                               <div class="col-sm-6 up-frm">
+                                 <label>Wishonary Url</label>
+                                 <input type="text" placeholder="Wishonary Url">
+                             </div>
+                             
+                             <div class="col-sm-6 up-frm">
+                                 <label>Company Stage</label>
+                                 <select>
+                                     <option>--select--</option>
+                                 </select>
+                             </div>
+                             
+                              <div class="col-sm-6 up-frm">
+                                 <label>Date Funded</label>
+                                 <input type="text" placeholder="Date Funded">
+                             </div>
+                             
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <h4 class="tab-heading">Social Links</h4>
+                        <div class="scl-url">
+                           <!-- <label>Web URL</label>-->
+                            <input type="text" placeholder="Web URL">
+                            <div class="sc-url"><i class="fa fa-globe"></i>Website</div>
+                        </div>
+                        
+                        <div class="scl-url">
+                           <!-- <label>Facebook</label>-->
+                            <input type="text" placeholder="Facebook URL">
+                            <div class="sc-url"><i class="fa fa-facebook"></i>Facebook</div>
+                        </div>
+                        
+                         <div class="scl-url">
+                            <!--<label>Linkedin</label>-->
+                            <input type="text" placeholder="Linkedin URL">
+                            <div class="sc-url"><i class="fa fa-linkedin"></i>Linkedin</div>
+                        </div>
+                        
+                         <div class="scl-url">
+                            <!--<label>Twitter</label>-->
+                            <input type="text" placeholder="Twitter URL">
+                            <div class="sc-url"><i class="fa fa-twitter"></i>Twitter</div>
+                        </div>
+                        
+                        
+                        <div class="scl-url">
+                            <!--<label>Company Slug</label>-->
+                            <input type="text" placeholder="Company Slug">
+                            <div class="sc-url"><i class="fa fa-globe"></i>Company</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="up-frm rht-aln col-sm-12">
+                     <button>Cancel</button>
+                     <input type="submit" value="Next">
+                    </div>
+                    
+               </div>
+              
+           </form>
+        </div>
+    </div>
+<!-- tab 1 close -->   
+    <div ng-show="tab === 2">
+        <div class="container">
+             <h4 class="tab-heading">Company Introduction</h4>
+             <div class="row">
+                 <div class="col-sm-6 c-intro">
+                      <label>Investor Pitch (ppt)</label>
+                       <div class="fileinput cp-load fileinput-new" data-provides="fileinput">
+                          <span class="btn btn-file"><span><img src="img/upload.png"></span>
+                          <span class="fls">Files here to upload</span>
+                          <input type="hidden"><input type="file"></span>
+                          <span class="fileinput-filename"></span><span class="fileinput-new"></span>
+                       </div>
+                 </div>
+                 
+                 <div class="col-sm-6 c-intro">
+                      <label>Company Induction (video)</label>
+                      <div class="fileinput cp-load fileinput-new" data-provides="fileinput">
+                          <span class="btn btn-file"><span><img src="img/upload.png"></span>
+                          <span class="fls">Files here to upload</span>
+                          <input type="hidden"><input type="file"></span>
+                          <span class="fileinput-filename"></span><span class="fileinput-new"></span>
+                      </div>
+                 </div>
+                 
+                 
+                 <div class="up-frm rht-aln col-sm-12">
+                     <button>Cancel</button>
+                     <input type="submit" value="Next">
+                 </div>
+                 
+             </div>
+        </div>
+    </div>
+<!-- tab 2 close -->      
+    <div ng-show="tab === 3">
+        <div class="container">
+             <h4 class="tab-heading">Company Introduction</h4>
+             <div class="row m-btm">
+                 <div class="col-sm-8">
+                     <div class="s-tp-3">
+                          <label>Customer profile / Target user</label>
+                          <textarea></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="col-sm-4">
+                      <div class="tip-s brw-bg">
+                          <h2>Tips</h2>
+                          <div class="tips">
+                               <ul>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                               </ul>
+                          </div>
+                      </div>
+                 </div>
+             </div>
+             
+             
+             <div class="row m-btm">
+                 <div class="col-sm-8">
+                     <div class="s-tp-3">
+                          <label>Customer problem / Pin ponts</label>
+                          <textarea></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="col-sm-4">
+                      <div class="tip-s brw-bg">
+                          <h2>Tips</h2>
+                          <div class="tips">
+                               <ul>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                               </ul>
+                          </div>
+                      </div>
+                 </div>
+             </div>
+             
+             
+             
+             <div class="row m-btm">
+                 <div class="col-sm-8">
+                     <div class="s-tp-3">
+                          <label>Product / Service / Solution</label>
+                          <textarea></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="col-sm-4">
+                      <div class="tip-s brw-bg">
+                          <h2>Tips</h2>
+                          <div class="tips">
+                               <ul>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                               </ul>
+                          </div>
+                      </div>
+                 </div>
+             </div>
+             
+             
+             
+             <div class="row m-btm">
+                 <div class="col-sm-8">
+                     <div class="s-tp-3">
+                          <label>Distribution strategy</label>
+                          <textarea></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="col-sm-4">
+                      <div class="tip-s brw-bg">
+                          <h2>Tips</h2>
+                          <div class="tips">
+                               <ul>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                               </ul>
+                          </div>
+                      </div>
+                 </div>
+             </div>
+             
+             
+             
+             <div class="row m-btm">
+                 <div class="col-sm-8">
+                     <div class="s-tp-3">
+                          <label>Competition</label>
+                          <textarea></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="col-sm-4">
+                      <div class="tip-s brw-bg">
+                          <h2>Tips</h2>
+                          <div class="tips">
+                               <ul>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                               </ul>
+                          </div>
+                      </div>
+                 </div>
+             </div>
+             
+             
+             <div class="row m-btm">
+                 <div class="col-sm-8">
+                     <div class="s-tp-3">
+                          <label>Competitive Advantage</label>
+                          <textarea></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="col-sm-4">
+                      <div class="tip-s brw-bg">
+                          <h2>Tips</h2>
+                          <div class="tips">
+                               <ul>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                                  <li>Lorem Ipsum is dummy text of the printing.</li>
+                               </ul>
+                          </div>
+                      </div>
+                 </div>
+             </div>
+             
+        </div>
+       
+       <div class="up-frm rht-aln col-sm-12">
+           <button>Cancel</button>
+           <input type="submit" value="Next">
+       </div>
+    </div>
+<!-- tab 3 close -->
+    <div ng-show="tab === 4">
+        <div class="container">
+            <div class="row">
+                 <div class="col-sm-6 s-tp-4">
+                   <h3 class="tab-heading">The Ask</h3>
+                   <p>What does your venture still need ? What is the goal of this deck ?</p>
+                     <div class="g-dtl">
+                          <h4>Fundind Goals</h4>
+                          <textarea></textarea>
+                          
+                          <h4>Timeline</h4>
+                          <textarea></textarea>
+                     </div>
+                 </div>
+                 
+                 <div class="col-sm-6">
+                       <div class="g-dtl">
+                           <h3 class="tab-heading">Fundind Allocations</h3>
+                          <div class="add-chrt"><a href="#">+ Add</a></div>
+                           <main>
+                                <section class="cntr" ng-controller="Controller as ctrl">
+                                    <pie-chart portfolio="ctrl.portfolio" chart-title="$100,000"></pie-chart>
+                                </section>
+                            </main>
+                        </div>
+                 </div>
+                 
+            </div>
+          
+           <h3 class="tab-heading">Funding History</h3>
+           <div class="tbl" ng-controller="tableCtrl">
+                <table class="table in-tbl table-bordered" cellpadding="0" cellspacing="0">
+                    <tr class="thead">
+                       <td class="col-xs-1">Round</td>
+                       <td class="col-xs-4">Investor</td>
+                       <td class="col-xs-2">Capital Raised</td>
+                       <td class="col-xs-2">Valuation</td>
+                       <td class="col-xs-2">Date</td>
+                       <td class="col-xs-1">Remove</td>
+                    </tr>
+                    
+                   <tr class="tbl-in" ng-repeat="row in rows">{{row.adds}}
+                       <td>
+                          <select>
+                              <option>1</option>
+                              <option>2</option>
+                          </select>
+                       </td>
+                       
+                       <td>
+                          <input type="text" placeholder="Invertor Name">
+                       </td>
+                       
+                       <td>
+                          <input type="text" placeholder="Capital Raised">
+                       </td>
+                       
+                       <td> 
+                         <input type="text" placeholder="Valuation">
+                       </td>
+                       
+                       <td>
+                          <input type="text" placeholder="Date">
+                       </td>
+                       <td><button class="rmv-rw" ng-click="removeRow($index)">Remove</button></td>
+                   </tr>
+                                             
+                    <tr>
+                       <td colspan="6">
+                          <button class="adr" ng-click="addRow()">+ Add Row</button>
+                       </td>
+                    </tr>
+                </table>
+           </div>
+           
+          <div class="clearfix"></div>
+          <div class="row">
+              <div class="col-sm-12"><h4 class="tab-heading">Annual Financial</h4></div>
+              <div class="col-sm-12">
+                   <div class="tbl">
+                <table class="table in-tbl table-bordered" cellpadding="0" cellspacing="0">
+                    <tr class="thead">
+                       <td></td>
+                       <td>2015</td>
+                       <td>2016</td>
+                       <td>2017</td>
+                       <td>2018</td>
+                       <td>2019</td>
+                    </tr>
+                    
+                   <tr class="tbl-in">
+                       <td>Revenue Driver</td>
+                       <td><input type="text" placeholder="Revenue Driver"></td>
+                       <td><input type="text" placeholder="Revenue Driver"></td>
+                       <td><input type="text" placeholder="Revenue Driver"></td>
+                       <td><input type="text" placeholder="Revenue Driver"></td>
+                       <td><input type="text" placeholder="Revenue Driver"></td>
+                   </tr>
+                   
+                   <tr class="tbl-in">
+                       <td>Revenue</td>
+                       <td><input type="text" placeholder="Revenue"></td>
+                       <td><input type="text" placeholder="Revenue"></td>
+                       <td><input type="text" placeholder="Revenue"></td>
+                       <td><input type="text" placeholder="Revenue"></td>
+                       <td><input type="text" placeholder="Revenue"></td>
+                   </tr>
+                   
+                   
+                   <tr class="tbl-in">
+                       <td>Expenditure</td>
+                       <td><input type="text" placeholder="Expenditure"></td>
+                       <td><input type="text" placeholder="Expenditure"></td>
+                       <td><input type="text" placeholder="Expenditure"></td>
+                       <td><input type="text" placeholder="Expenditure"></td>
+                       <td><input type="text" placeholder="Expenditure"></td>
+                   </tr>
+                   
+                    <tr class="tbl-in">
+                       <td>Profit (Loss)</td>
+                       <td><input type="text" placeholder="Profit (Loss)"></td>
+                       <td><input type="text" placeholder="Profit (Loss)"></td>
+                       <td><input type="text" placeholder="Profit (Loss)"></td>
+                       <td><input type="text" placeholder="Profit (Loss)"></td>
+                       <td><input type="text" placeholder="Profit (Loss)"></td>
+                   </tr>
+                                             
+                </table>
+              </div>
+              
+          </div>
+             
+             <div class="up-frm rht-aln col-sm-12">
+                 <button>Cancel</button>
+                 <input type="submit" value="Next">
+            </div>
+        </div>
+    </div>
+    </div>
+<!-- tab 4 close -->
+   <div ng-show="tab === 5">   
+       <div class="container">       
+            <div class="clearfix"></div>
+           <div class="sp">
+            <div class="tbl" ng-controller="tableCtrl">
+                <table class="table in-tbl table-bordered" cellpadding="0" cellspacing="0">
+                    <tr class="thead">
+                       <td class="col-xs-6">Business Plan</td>
+                       <td class="col-xs-5">Upload</td>
+                       <td class="col-xs-1">Remove</td>
+                    </tr>
+                    
+                   <tr class="tbl-in" ng-repeat="row in rows">{{row.adds}}
+                       <td>
+                          <input type="text" placeholder="Financial Projection">
+                       </td>
+                       
+                       <td class="upld-file">
+                         <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <span class="btn btn-default drs-btn btn-file"><span>Choose file</span>
+                            <input type="file"></span>
+                            <span class="fileinput-new">No file chosen</span>
+                            <span class="fileinput-filename"></span>
+                         </div>
+                       </td>
+                       
+                       <td><button class="rmv-rw" ng-click="removeRow($index)">Remove</button></td>
+                   </tr>
+                   
+                    <tr>
+                       <td colspan="3">
+                          <button class="adr" ng-click="addRow()">+ Add Row</button>
+                       </td>
+                    </tr>
+                   
+                   <tr class="tbl-in">
+                      <td><input type="text" placeholder="Annual Financial"></td>
+                      <td class="upld-file" colspan="3">
+                         <div class="fileinput fileinput-new lf-md" data-provides="fileinput">
+                            <span class="btn btn-default drs-btn btn-file"><span>Choose file</span>
+                            <input type="file"></span>
+                            <span class="fileinput-new">No file chosen</span>
+                            <span class="fileinput-filename"></span>
+                         </div>
+                       </td>
+                   </tr>
+                   
+                </table>
+           </div>
+           </div>
+           </div>
+           <div class="up-frm rht-aln col-sm-12">
+               <button>Cancel</button>
+               <input type="submit" value="Next">
+          </div>
+   </div>
+<!-- tab 5 close -->
+</div>
+         
+</div>
+<!----------------------
+warpper closed
+----------------------->
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script src="js/focus.js"></script>
+<!-- pie chart js -->
+<script src="js/pie-1.js"></script>
+<script src="js/pie-2.js"></script>
+<!-- pie chart js -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="bg-31" ng-app="wishonaryApp">
+
+<div class="wrapper dash-2">
+<div class="container shd">
+   <header>
+      <div class="row brm">
+          <div class="col-sm-3">
+              <div class="logo"><a href="#"><img src="img/logo.png"></a></div>
+          </div>
+          
+          <div class="col-sm-6">
+              <form action="" method="get">
+                  <div class="srh-frm">
+                     <input type="text" placeholder="Search for Investor">
+                  </div>
+              </form>
+          </div>
+          
+          <div class="col-sm-3">
+              <div class="pull-right">
+              <div class="pls"><i class="fa fa-plus"></i></div>
+              <div class="thr">3</div>
+              <div class="in-dr dropdown-toggle" data-toggle="dropdown"><img src="img/c-img.png"></div>
+              <ul class="dropdown-menu drm">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Lorem</a></li>
+                <li><a href="#">Ipsum</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+              </div>
+          </div>
+          
+      </div>
+   </header>
+<!------------------------
+header close
+------------------------->
+<div class="row"> 
+<div class="all-sect">
+     <div class="dsp-sidebar">
+         <div class="sidebar-m">
+             <ul ng-init="tab = 1">
+                <li ng-class="{active:tab===1}"><a href="#" ng-click="tab = 1"><i class="fa fa-user"></i><span>People</span></a></li>
+                <li ng-class="{active:tab===2}"><a href="#" ng-click="tab = 2"><i class="fa fa-line-chart"></i><span>Startups</span></a></li>
+                <li ng-class="{active:tab===3}"><a href="#" ng-click="tab = 3"><i class="fa fa-briefcase"></i><span>Jobs</span></a></li>
+                <li ng-class="{active:tab===4}"><a href="#" ng-click="tab = 4"><i class="fa fa-envelope"></i><span>Inbox</span></a></li>
+                <li ng-class="{active:tab===5}"><a href="#" ng-click="tab = 5"><i class="fa fa-cog"></i><span>Self Help Tool</span></a></li>
+             </ul>
+         </div>
+       <div class="clearfix"></div>  
+       <div class="xs-brdr"></div>
+       <div class="clearfix"></div>  
+         <div ng-controller="popupController">
+         <div class="progress-wrapper">
+            <div class="progress cl-ew ng-cloak" ng-style="getStyle()">{{ preciseCurrent || current }}%</div>
+            <round-progress
+                max="max"
+                current="current"
+                color="{{ getColor() }}"
+                bgcolor="{{ bgColor }}"
+                radius="{{ radius }}"
+                semi="isSemi"
+                rounded="rounded"
+                stroke="{{ stroke }}"
+                clockwise="clockwise"
+                responsive="responsive"
+                duration="{{ duration }}"
+                animation="{{ currentAnimation }}"
+                offset="{{ offset }}"
+                animation-delay="{{ animationDelay }}"
+                on-render="showPreciseCurrent">
+
+                <svg>
+                    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="5%"  stop-color="green"/>
+                        <stop offset="95%" stop-color="gold"/>
+                    </linearGradient>
+                </svg>
+            </round-progress>
+        </div>
+         </div>
+         
+         <div class="pf-cmpl"><h3>Complete Profile</h3></div>
+         
+     </div>
+     <div class="shw-element">
+         <div class="mid-1">
+          <div ng-show="tab === 1">
+              <div class="tp-sfc" ng-init="tab2 = 6">
+                  <div class="col-sm-4" ng-class="{active:tab2===6}">
+                     <div class="cys aspan" ng-click="tab2 = 6"><i class="fa fa-pencil"></i><span>Post and Update</span></div>
+                  </div>
+                  
+                  <div class="col-sm-4" ng-class="{active:tab2===7}">
+                      <div class="fam aspan" ng-click="tab2 = 7"><i class="fa fa-industry"></i><span>Create Your Startups</span></div>
+                  </div>
+                  
+                  <div class="col-sm-4" ng-class="{active:tab2===8}">
+                      <div class="sfi aspan" ng-click="tab2 = 8"><i class="fa fa-cog"></i><span>Other</span></div>
+                  </div>
+                  
+                  <div ng-show="tab2 === 6">
+                      <div class="tb-cys">
+                        <form>
+                          <textarea placeholder="What's Your mind ?"></textarea>
+                        </form>
+                        
+                        <div class="bpst">
+                            <div class="upl-ic">
+                                <a><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+                                <a><i class="fa fa-camera" aria-hidden="true"></i></a>
+                                <input type="submit" value="Post">
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <div ng-show="tab2 === 7">
+                      <div class="tb-cys12">
+                        <form>
+                          <textarea placeholder="What's Your mind ?"></textarea>
+                        </form>
+                        
+                        <div class="bpst">
+                            <div class="upl-ic">
+                                <a><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+                                <a><i class="fa fa-camera" aria-hidden="true"></i></a>
+                                <input type="submit" value="Post">
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <div ng-show="tab2 === 8">
+                      <div class="tb-cys13">
+                        <form>
+                          <textarea placeholder="What's Your mind ?"></textarea>
+                        </form>
+                        
+                        <div class="bpst">
+                            <div class="upl-ic">
+                                <a><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+                                <a><i class="fa fa-camera" aria-hidden="true"></i></a>
+                                <input type="submit" value="Post">
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          
+         <div class="cn-dr">
+             
+             <div class="srt">
+                <label>Sort By</label> 
+                <select><option>Popular</option></select>
+             </div>
+             
+             <div class="cnn"><span><img src="img/icon-11.png"></span>
+                 <select>
+                     <option>Connections Only</option>
+                 </select>
+             </div>
+         </div>
+         
+         <div class="clearfix"></div>
+         <!-- tiles-->
+          <div class="tile-shd">
+              <div class="pfp">
+                  <div class="pfp-i"><img src="img/c-img.png"></div>
+                  <div class="pfnm">
+                      <h2>Kristy Donald <span>- Senior UX Designer</span></h2>
+                      <h3>1d</h3>
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s.</p>
+                  </div>
+               </div>
+               
+               <div class="al-pfcm">
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum is simply dummy text.</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="rpl"><button>Reply<i class="fa fa-chevron-circle-right"></i></button></div>
+               
+               </div>
+               
+          </div>
+          
+          <div class="tile-shd">
+              <div class="pfp">
+                  <div class="pfp-i"><img src="img/c-img.png"></div>
+                  <div class="pfnm">
+                      <h2>Kristy Donald <span>- Senior UX Designer</span></h2>
+                      <h3>1d</h3>
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s.</p>
+                  </div>
+               </div>
+               
+               <div class="al-pfcm">
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum is simply dummy text.</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="rpl"><button>Reply<i class="fa fa-chevron-circle-right"></i></button></div>
+               
+               </div>
+               
+          </div>
+          
+          <div class="tile-shd">
+              <div class="pfp">
+                  <div class="pfp-i"><img src="img/c-img.png"></div>
+                  <div class="pfnm">
+                      <h2>Kristy Donald <span>- Senior UX Designer</span></h2>
+                      <h3>1d</h3>
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s.</p>
+                  </div>
+               </div>
+               
+               <div class="al-pfcm">
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum is simply dummy text.</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="rpl"><button>Reply<i class="fa fa-chevron-circle-right"></i></button></div>
+               
+               </div>
+               
+          </div>
+          
+          <div class="tile-shd">
+              <div class="pfp">
+                  <div class="pfp-i"><img src="img/c-img.png"></div>
+                  <div class="pfnm">
+                      <h2>Kristy Donald <span>- Senior UX Designer</span></h2>
+                      <h3>1d</h3>
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s.</p>
+                  </div>
+               </div>
+               
+               <div class="al-pfcm">
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum is simply dummy text.</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="pf-cm">
+                   <div class="cm-pic"><img src="img/autor.png"></div>
+                   <div class="cm-des"><h2>Robert James</h2><span>Lorem Ipsum has been the industry's standard 
+                      dummy text ever since the 1500s</span></div>
+                   <div class="cm-date">1d</div>
+               </div>
+               
+               <div class="rpl"><button>Reply<i class="fa fa-chevron-circle-right"></i></button></div>
+               
+               </div>
+               
+          </div>
+         <!-- tiles-->
+           
+         </div>
+         </div>
+         <div class="rht-sidebar">
+             <div class="evnt-tile xsp-etile">
+                 <img src="img/comp3.jpg">
+                 <h2>What is Lorem Ipsum?</h2>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+                 dummy text ever since the 1500s, </p>
+                 <span>NOV 12,2015 Lorem Ipsum</span>
+             </div>
+             
+             <div class="evnt-tile xsp-etile">
+                 <img src="img/sp-012.jpg">
+                 <h2>What is Lorem Ipsum?</h2>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+                 dummy text ever since the 1500s, </p>
+                 <span>NOV 12,2015 Lorem Ipsum</span>
+             </div>
+             
+             <div class="evnt-tile">
+                 <h1>People You May Know</h1>
+                 <div class="xs-bdr"></div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/autor.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/c-img.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/autor.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/c-img.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/autor.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/c-img.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/autor.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                 <div class="pym">
+                     <div class="pympic"><img src="img/c-img.png"></div>
+                     <div class="pymnm"><h2>John Pearl</h2><p>Trip Adviser</p></div>
+                     <div class="pymdt">18&nbsp;<img src="img/icon-11.png"></div>
+                 </div>
+                
+             </div>
+             
+         </div> 
+     </div>
+     
+</div>
+</div>
+<!------------------------
+mid section close
+------------------------->
+
+</div>
+</div>
+
+<script src="js/angular.min.js"></script>
+<script src="js/dsh-controller.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/roundProgress.js"></script>
+ <script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+</body>
+</html>
+

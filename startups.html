@@ -1,0 +1,1564 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="css/company-profile.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp">
+
+<div class="wrapper">
+   <header>
+       <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+               <nav id="navbar" class="animenu navbar-collapse collapse">
+                  <label for="show-menu" class="show-menu"><span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                  <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                  <li><a href="#"><span>News</span></a></li>
+                  <li ng-controller="popupController"><a href="#"><span>Help</span></a>
+                      <ul class="drp-tp">
+                         <li><a href="#" ng-click="isPopupVisble()">Tour this page</a></li>
+                      </ul>
+                      <div ng-show="showPopup">
+                         <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+                         <div class="ttp" data-ng-click="hidePrompt()">
+                             <div class="container">
+                                 <div class="tp-l"><img src="img/ar-1.png"><p>Lorem Ipsum is simply</p></div>
+                                 <div class="tp-m"><img src="img/ar-3.png"><p>Lorem Ipsum</p></div>
+                                 <div class="tp-r"><img src="img/ar-2.png"><p>Lorem Ipsum dolor</p></div>
+                                 <button class="ogt">Okay. Got it.</button>
+                             </div>
+                         </div>
+                       </div>
+                  </li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                               <div class="in-lg"> 
+                                 <div class="row">
+                                      <div class="col-sm-12">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <!--<p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>-->
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">My registering your details you agree to our terms and condtions and privacy and cookie policay</label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                 <!--  <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>-->
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                               </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+   </header>
+    
+<!------------------------
+header close
+------------------------->  
+<div class="clearfix"></div>  
+ <section>
+         <div class="container s-frm">
+              <div class="row">
+                  <div class="all-bx">
+                       <div class="bx-header">
+                            <div class="col-sm-3 bor">
+                                 <div class="al-cov">Overview</div>
+                                 <div class="all-ele">
+                                      <ul>
+                                         <h5 class="m-head">REQUIRED</h5>
+                                         <!-----------one------------>
+                                         <li>
+                                             <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()" >Company Basics</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                        <!-------------start----------------->
+                                                        <div ng-app="myApp">
+                                                        <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Company Basics</h3>
+                                                                   <div class="c-dc"><p>Add your company name, elevator pitch, and other basic information
+                                                                    about your company.</p></div>
+                                                                    
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Elevator Pitch</label>
+                                                                             <div class="al-tx"><textarea class="form-control error cb-f"></textarea></div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Company Name</label>
+                                                                             <div class="al-tx"><input type="text" class="form-control error cb-f"></div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t slt">
+                                                                             <label>Company Stage</label>
+                                                                             <div class="al-tx">
+                                                                                 <select class="form-control error cb-f">
+                                                                                       <option>--Company Stage--</option>
+                                                                                 </select>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t slt">
+                                                                             <label>Primary Industry</label>
+                                                                             <div class="al-tx">
+                                                                                 <select class="form-control error cb-f">
+                                                                                       <option>--Primary Industry--</option>
+                                                                                 </select>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Location</label>
+                                                                             <div class="al-tx"><input type="text" class="form-control error cb-f"></div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Date Founded</label>
+                                                                             <div class="al-tx"><input type="text" class="form-control error cb-f cal"  
+                                                                             pickadate ng-model="date" format="dd/mm/yyyy"></div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t slt">
+                                                                             <label>Number of Employees</label>
+                                                                              <div class="al-tx">
+                                                                                 <select class="form-control error cb-f">
+                                                                                       <option>0-10</option>
+                                                                                       <option>10-50</option>
+                                                                                       <option>50-100</option>
+                                                                                       <option>Above-100</option>
+                                                                                 </select>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Company Url</label>
+                                                                            <div class="al-tx"><input type="text" class="form-control error cb-f"></div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Company Profile Url</label>
+                                                                             <div class="al-tx"><input type="text" class="form-control error cb-f"></div>
+                                                                             <div class="al-tx">
+                                                                                 <input type="text" class="form-control error fld" 
+                                                                                 value="https://wishonary.com/company name">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>What are You Looking For</label>
+                                                                             <label>
+                                                                                 <div class="value">
+                                                                                     <ul>
+                                                                                        <li><span><input type="checkbox"></span><span>Lorem</span></li>
+                                                                                        <li><span><input type="checkbox"></span><span>Lorem</span></li>
+                                                                                        <li><span><input type="checkbox"></span><span>Lorem</span></li>
+                                                                                        <li><span><input type="checkbox"></span><span>Lorem</span></li>
+                                                                                        <li><span><input type="checkbox"></span><span>Lorem</span></li>
+                                                                                        <li><span><input type="checkbox"></span><span>Lorem</span></li>
+                                                                                     </ul>
+                                                                                 </div>
+                                                                             </label>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="button" class="cancel-x" value="Cancel" 
+                                                                                  data-ng-click="hidePrompt()">
+                                                                                  <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+
+                                                                        
+                                                                   </div>
+                                                              </div>
+                                                         </div>
+                                                         </form>
+                                                         </div>
+                                                        <!------------------end------------------->
+                                                         
+                                                          <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                      </div>
+                                                      
+                                                   </div>
+                                                  
+                                            </div>
+                                         </li>
+                                         <!-----------one------------>
+                                         
+                                         <li>
+                                             <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Company Summary</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                        <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Company Summary</h3>
+                                                                   <div class="c-dc"><p>Add an overview to help investors evaluate your startup. You might 
+                                                                   like to include your business model, structure and products/services.</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                         </li>
+                                         
+                                          <!-----------one------------>
+                                         <h5 class="m-head">OPTIONAL</h5>
+                                         
+                                         <li>
+                                            <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Company Contact Information</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Contact Information</h3>
+                                                                   <div class="c-dc"><p>Provide contact information for your company.</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Phone Number </label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                          <div class="form-group1 cb-t">
+                                                                             <label>Email Address</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Office Location</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f" placeholder="Enter Location">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                        </li>
+                                       
+                                         <!-----------one------------>
+                                        
+                                        <li>
+                                            <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Company Social Presence</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Company Social Presence</h3>
+                                                                   <div class="c-dc"><p>Provide contact information for your company.</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label class="sc"><i class="fa fa-linkedin"></i></label>
+                                                                             <div class="sc-txt">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                          <div class="form-group1 cb-t">
+                                                                             <label class="sc"><i class="fa fa-twitter"></i></label>
+                                                                             <div class="sc-txt">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label class="sc"><i class="fa fa-facebook"></i></label>
+                                                                             <div class="sc-txt">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                        </li>
+                                        <!-----------one------------>
+                                        <li>
+                                            <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Management</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Management Team</h3>
+                                                                   <div class="c-dc"><p>Who are the members of your management team and how will their
+                                                                    experience aid in your success?</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Name</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Email</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Designation</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                        <div class="form-group1 cb-t slt">
+                                                                             <label>Job Role</label>
+                                                                             <div class="al-tx">
+                                                                                 <select class="form-control error cb-f">
+                                                                                       <option>Lorem</option>
+                                                                                       <option>Lorem</option>
+                                                                                       <option>Lorem</option>
+                                                                                       <option>Lorem</option>
+                                                                                 </select>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" 
+                                                                                   data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                        </li>
+                                          <!-----------one------------>
+                                      </ul>
+                                 </div>
+                            </div>
+                            
+                            <div class="col-sm-3 bor">
+                                  <div class="al-cov">Executive Summary</div>
+                                  <div class="all-ele">
+                                       <ul>
+                                           <h5 class="m-head">REQUIRED</h5>
+                                           
+                                            <!-----------one------------>
+                                           
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Competitive Advantage</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Competitive Advantage</h3>
+                                                                   <div class="c-dc"><p>What is your company's competitive advantage (e.g. processes, 
+                                                                   patents, first mover advantage, expertise or proprietary technology)?</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            <h5 class="m-head">OPTIONAL</h5>
+                                            
+                                             <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Customer Problem</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Customer Problem</h3>
+                                                                   <div class="c-dc"><p>What customer problem does your product and/or service solve?</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                             <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Target Market</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Target Market</h3>
+                                                                   <div class="c-dc"><p>Detail the geographic, demographic and psychographic characteristics
+                                                                    that define your target market.</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                             <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Customers</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Customers</h3>
+                                                                   <div class="c-dc"><p>Outline who your customers are and why you are targeting them.</p>
+                                                                   </div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Business Model</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Business Model</h3>
+                                                                   <div class="c-dc"><p>What strategy will you employ to build, deliver and retain company 
+                                                                   value.</p>
+                                                                   </div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            
+                                             <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Product/Services</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Product/Services</h3>
+                                                                   <div class="c-dc"><p>Describe your product and/or service and detail the key customer                                                                   benefits.</p>
+                                                                   </div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Sales/Marketing Strategy</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Sales/Marketing Strategy</h3>
+                                                                   <div class="c-dc"><p>What is your customer acquisition and retention strategy? 
+                                                                   Detail how you will promote, sell and create customer loyalty for your market offering.</p>
+                                                                   </div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                             <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Competitors</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                           <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Competitors</h3>
+                                                                   <div class="c-dc"><p>Describe the competitive landscape and your competitors' strengths 
+                                                                   and weaknesses.</p>
+                                                                   </div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <textarea class="form-control error al-tra"></textarea>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                             <!-----------one------------>
+                                            
+                                       </ul>
+                                  </div>
+                            </div>
+                            
+                            <div class="col-sm-3 bor">
+                                 <div class="al-cov">Financials</div>
+                                 <div class="all-ele">
+                                      <ul>
+                                         
+                                            <h5 class="m-head">OPTIONAL</h5>
+                                            
+                                            <li>
+                                               <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Current Funding Round</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Current Funding Round</h3>
+                                                                   <div class="c-dc"><p>Provide the details about the round of funding you are currently
+                                                                    raising.</p></div>
+                                                                   <div class="col-md-12">
+                                                                       <div class="form-group1 cb-t slt">
+                                                                             <label>Which is your preferred currency?</label>
+                                                                             <div class="al-tx">
+                                                                                  <select class="form-control error cb-f">
+                                                                                         <option>INR</option>
+                                                                                         <option>USD</option>
+                                                                                  </select>
+                                                                            </div>
+                                                                        </div>
+                                                                   
+                                                                        <div class="form-group1 cb-t slt">
+                                                                             <label>Round *</label>
+                                                                             <div class="al-tx">
+                                                                                  <select class="form-control error cb-f">
+                                                                                         <option>Round 1</option>
+                                                                                         <option>Round 2</option>
+                                                                                         <option>Round 3</option>
+                                                                                         <option>Seed</option>
+                                                                                         <option>Stage A</option>
+
+                                                                                         <option>Stage B</option>
+                                                                                  </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                          <div class="form-group1 cb-t">
+                                                                             <label>Seeking </label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                        <div class="form-group1 cb-t slt">
+                                                                             <label></label>
+                                                                             <div class="al-tx">
+                                                                                  <select class="form-control error cb-f">
+                                                                                         <option>Preferred Equity</option>
+                                                                                         <option>Common Equity</option>
+                                                                                         <option>Convertible Note</option>
+                                                                                  </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Funding History</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Funding History</h3>
+                                                                   <div class="c-dc"><p>Provide the details about the round of funding you are currently
+                                                                    raising.</p></div>
+                                                                    
+                                                                    <div class="col-md-12">
+                                                                         <div class="es-1">
+                                                                              <table class="table table-bordered" cellpadding="0" cellspacing="0">
+                                                                                     <tbody><tr class="thead">
+                                                                                         <td></td>
+                                                                                         <td>2015</td>
+                                                                                         <td>2016</td>
+                                                                                         <td>2017</td>
+                                                                                         <td>2018</td>
+                                                                                         <td>2019</td>
+                                                                                     </tr>
+                                                                                     
+                                                                                     <tr>
+                                                                                         <td>Revenue Driver</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                     </tr>
+                                                                                     
+                                                                                     
+                                                                                     <tr>
+                                                                                         <td>Revenue ₨</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                     </tr>
+                                                                                     
+                                                                                     
+                                                                                     <tr>
+                                                                                         <td>Expenditure ₨</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                     </tr>
+                                                                                     
+                                                                                     <tr>
+                                                                                         <td>Profit (Loss) ₨</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                         <td>--</td>
+                                                                                     </tr>
+                                        
+                                                                                     
+                                                                                </tbody>
+                                                                                </table>
+                                                                         </div>
+                                                                    </div>
+                                                                    
+                                                                    
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t slt">
+                                                                             <label>Round *</label>
+                                                                             <div class="al-tx">
+                                                                                  <select class="form-control error cb-f">
+                                                                                         <option>Round 1</option>
+                                                                                         <option>Round 2</option>
+                                                                                         <option>Round 3</option>
+                                                                                         <option>Seed</option>
+                                                                                         <option>Stage A</option>
+                                                                                         <option>Stage B</option>
+                                                                                  </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                          <div class="form-group1 cb-t">
+                                                                             <label>Capital Raised</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                         
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Closing Date</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f cal">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 remove">
+                                                                             <a href="#"><span><i class="fa fa-trash-o"></i></span>
+                                                                                <span>Remove</span>
+                                                                             </a>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                     <input type="button" class="cancel-x anr" value="Add Another Round">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                             <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Annual Financials</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Annual Financials</h3>
+                                                                   <div class="c-dc"><p>Enter your financials for this year and last year, as well as
+                                                                    projections for the following three years. Investors like to compare and evaluate 
+                                                                    financial performance over this timeframe, so do your best to complete it.</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Annual Revenue Run Rate</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                             <label>Monthly Burn Rate</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                          <div class="form-group1 cb-t">
+                                                                             <label>Financial Annotation</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue Driver</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        <h5 class="m-hd m-1">2015</h5>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue Driver</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Expenditure </label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                         <h5 class="m-hd m-1">2016</h5>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue Driver</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Expenditure </label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                       
+                                                                        <h5 class="m-hd m-1">2017</h5>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue Driver</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Expenditure </label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                         <h5 class="m-hd m-1">2018</h5>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue Driver</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Expenditure </label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                       
+                                                                       
+                                                                        <h5 class="m-hd m-1">2019</h5>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue Driver</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Revenue</label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                        
+                                                                         <div class="form-group1 cb-t">
+                                                                             <label>Expenditure </label>
+                                                                             <div class="al-tx">
+                                                                                  <input type="text" class="form-control error cb-f">
+                                                                                  <div class="rs">Rs</div>
+                                                                             </div>
+                                                                        </div>
+                                                                       
+                                                                        <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click="hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                       </ul>
+                                 </div>
+                            </div>
+                            
+                            <div class="col-sm-3">
+                                  <div class="al-cov">Documents / Pitch Deck</div>
+                                   <div class="all-ele">
+                                      <ul>
+                                            <h5 class="m-head">OPTIONAL</h5>
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Pitch Deck</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Pitch Deck</h3>
+                                                                   <div class="c-dc"><p>&nbsp;</p></div>
+                                                                   <div class="col-md-12">
+                                                                        
+                                                                        <div class="graph">
+                                                                             <div class="aded-file">
+                                                                                 <div class="fl-nm"><img src="img/logo.png"></div>
+                                                                                 <div class="fl-del pull-right">
+                                                                                       <span><i class="fa fa-trash"></i></span>
+                                                                                       <span>Delete</span>
+                                                                                 </div>
+                                                                             </div>
+                                                                        
+                                                                             <div class="slc-file">
+                                                                                  <label id="upload-file-container"><div class="file-wrapper">
+                                                                                       <input type="file">
+                                                                                       <span class="button">Choose File </span>
+                                                                                   </div></label>
+                                                                              </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="button" class="cancel-x" value="Cancel" data-ng-click=
+                                                                                   "hidePrompt()">
+                                                                                   <input type="submit" class="don-x" value="Done">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Pitch Video</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Pitch Video</h3>
+                                                                   <div class="c-dc"><p>Your pitch video is an essential part of your profile. Help 
+                                                                   investors evaluate your company by uploading one.</p></div>
+                                                                   <div class="col-md-12">
+                                                                      <div ng-controller="popupController"> 
+                                                                        <div class="video1">
+                                                                        <div class="aded-file">
+                                                                                 <div class="fl-nm"><img src="img/logo.png"></div>
+                                                                                 <div class="fl-del pull-right">
+                                                                                       <span><i class="fa fa-trash"></i></span>
+                                                                                       <span>Delete</span>
+                                                                                 </div>
+                                                                             </div>
+                                                                        <div class="slc-file">
+                                                                              <label id="upload-file-container"><div class="file-wrapper">
+                                                                              <input type="file">
+                                                                              <span class="button">Choose File </span>
+                                                                           </div></label>
+                                                                           </div>
+                                                                             
+                                                                        </div>
+                                                                        
+                                                                         
+                                                                      </div>
+                                                                        <div class="form-group1 cb-t">
+                                                                              <label>&nbsp;</label>
+                                                                             <div class="al-tx">
+                                                                                   <input type="submit" class="don-x" value="Close" 
+                                                                                   data-ng-click="hidePrompt()">
+                                                                              </div>
+                                                                         </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            <!-----------one------------>
+                                            
+                                            <li>
+                                               <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Business Plan</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Business Plan</h3>
+                                                                   <div class="c-dc"><p>What is your long term business plan? Preferred file 
+                                                                   types:  pdf.</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="bp">
+                                                                         <div ng-controller="popupController"  >
+                                                                             <div class="al-bt">
+                                                                                 <div class="aded-file">
+                                                                                 <div class="fl-nm"><img src="img/logo.png"></div>
+                                                                                 <div class="fl-del pull-right">
+                                                                                       <span><i class="fa fa-trash"></i></span>
+                                                                                       <span>Delete</span>
+                                                                                 </div>
+                                                                             </div>
+                                                                             
+                                                                                 <div class="slc-file">
+                                                                                        <label id="upload-file-container"><div class="file-wrapper">
+                                                                                            <input type="file">
+                                                                                            <span class="button">Add Document</span>
+                                                                                          </div></label>
+                                                                                   </div>
+                                                                             </div>
+                                                                             
+                                                                         </div>
+                                                                        </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                            
+                                            <!-----------one------------>
+                                            
+                                            <li>
+                                                <div ng-controller="popupController"  >
+                                               <a href="#" ng-click="isPopupVisble()">Financial Projections</a>
+                                                   <div ng-show="showPopup">
+                                                      <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                                                      <div class="cb">
+                                                          <form action="" method="post">
+                                                         <div class="container-fluid">
+                                                              <div class="row">
+                                                                   <h3 class="m-hd">Financial Projections</h3>
+                                                                   <div class="c-dc"><p>Provide an overview of where your financials are headed within 
+                                                                   the next 5 years. Preferred file types: pdf.</p></div>
+                                                                   <div class="col-md-12">
+                                                                        <div class="bp">
+                                                                         <div ng-controller="popupController"  >
+                                                                             <div class="al-bt">
+                                                                                 <div class="aded-file">
+                                                                                 <div class="fl-nm"><img src="img/logo.png"></div>
+                                                                                 <div class="fl-del pull-right">
+                                                                                       <span><i class="fa fa-trash"></i></span>
+                                                                                       <span>Delete</span>
+                                                                                 </div>
+                                                                             </div>
+                                                                             
+                                                                                 <div class="slc-file">
+                                                                                        <label id="upload-file-container"><div class="file-wrapper">
+                                                                                            <input type="file">
+                                                                                            <span class="button">Add Document</span>
+                                                                                          </div></label>
+                                                                                   </div>
+                                                                             </div>
+                                                                             
+                                                                         </div>
+                                                                        </div>
+                                                                        
+                                                                   </div>
+                                                               </div>
+                                                         </div>
+                                                         <button id="btnCanceRemove" class="cancel-1" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                                         </form>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </li>
+                                       </ul>
+                                 </div>
+                            </div>
+                       </div>
+                  </div>
+            
+            <!----show content------>
+
+            </div>
+         </div>
+      </section>
+  
+<!------------------------
+header close
+------------------------->    
+</div>
+
+
+ <script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+</body>
+</html>
+

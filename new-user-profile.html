@@ -1,0 +1,855 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp">
+
+<div class="wrapper">
+   <header>
+       <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+               <nav id="navbar" class="animenu navbar-collapse collapse">
+                  <label for="show-menu" class="show-menu"><span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                  <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                  <li><a href="#"><span>News</span></a></li>
+                  <li ng-controller="popupController"><a href="#"><span>Help</span></a>
+                      <ul class="drp-tp">
+                         <li><a href="#" ng-click="isPopupVisble()">Tour this page</a></li>
+                      </ul>
+                      <div ng-show="showPopup">
+                         <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+                         <div class="ttp" data-ng-click="hidePrompt()">
+                             <div class="container">
+                                 <div class="tp-l"><img src="img/ar-1.png"><p>Lorem Ipsum is simply</p></div>
+                                 <div class="tp-m"><img src="img/ar-3.png"><p>Lorem Ipsum</p></div>
+                                 <div class="tp-r"><img src="img/ar-2.png"><p>Lorem Ipsum dolor</p></div>
+                                 <button class="ogt">Okay. Got it.</button>
+                             </div>
+                         </div>
+                       </div>
+                  </li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                               <div class="in-lg"> 
+                                 <div class="row">
+                                      <div class="col-sm-12">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">i would like to recive 4fashion latest news </label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                 <!--  <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>-->
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                               </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+   </header>
+    
+<!------------------------
+header close
+------------------------->  
+<div class="clearfix"></div>  
+<div class="container sft up-pd">
+    <div class="tp-sect1">
+        <h3>Welcome to www.wishonary.com</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
+        the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+
+<div class="up-sect2">
+     <ul class="up-tabs" ng-init="tab = 1">
+        <li ng-class="{active:tab===1}"><a href="" ng-click="tab = 1">Step 1</a></li>
+        <li ng-class="{active:tab===2}"><a href="" ng-click="tab = 2">Step 2</a></li>
+        <li ng-class="{active:tab===3}"><a href="" ng-click="tab = 3">Step 3</a></li>
+        <li ng-class="{active:tab===4}"><a href="" ng-click="tab = 4">Step 4</a></li>
+        <li ng-class="{active:tab===5}"><a href="" ng-click="tab = 5">Step 5</a></li>
+     </ul> 
+     
+     <div class="show-sect">
+         <div ng-show="tab === 1">
+         <div class="up-tb-hd"><h4>Let's start with the basic information</h4></div>
+         <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                         <div class="up-frm">
+                             <div class="fileinput up-load fileinput-new" data-provides="fileinput">
+                                  <span class="btn btn-file"><span><img src="img/upload.png"></span>
+                                  <span class="fls">Files here to upload</span>
+                                  <input type="hidden"><input type="file"></span>
+                                  <span class="fileinput-filename"></span><span class="fileinput-new"></span>
+                             </div>
+                         </div>
+                         
+                         <!--<div class="row">
+                             <div class="col-sm-6 up-frm">
+                                 <label>Country <span>(required)</span></label>
+                                 <select>
+                                    <option>--select--</option>
+                                 </select>
+                             </div>
+                             
+                             <div class="col-sm-6 up-frm">
+                                 <label>User Type <span>(required)</span></label>
+                                 <select>
+                                    <option>--select--</option>
+                                 </select>
+                             </div>
+                             
+                              <div class="col-sm-6 up-frm">
+                                 <label>City <span>(required)</span></label>
+                                 <input type="text" placeholder="City">
+                             </div>
+                             
+                             <div class="col-sm-6 up-frm">
+                                 <label>State</label>
+                                 <input type="text" placeholder="State">
+                             </div>
+                             
+                         </div>-->
+                         
+                    </div>
+                    
+                    <div class="col-sm-6">
+                      <div class="row">
+                         <div class="col-sm-6 up-frm">
+                            <label>First Name <span>(required)</span></label>
+                            <input type="text" placeholder="First Name">
+                         </div>
+                             
+                         <div class="col-sm-6 up-frm">
+                             <label>Last Name</label>
+                             <input type="text" placeholder="Last Name">
+                         </div>
+                         
+                         <div class="col-sm-6 up-frm">
+                            <label>Email <span>(required)</span></label>
+                            <input type="text" placeholder="Email">
+                         </div>
+                         
+                          <div class="col-sm-6 up-frm">
+                            <label>Mobile <span>(required)</span></label>
+                            <div class="mobile">
+                            <input type="tel" placeholder="">
+                            <div class="contact">+91</div>
+                            </div>
+                         </div>
+                         
+                         <div class="col-sm-6 up-frm">
+                             <label>Location</label>
+                             <input type="text" placeholder="Location">
+                         </div>
+                         
+                         <div class="col-sm-6 up-frm">
+                            <label>Industry <span>(required)</span></label>
+                            <input type="text" placeholder="Industry">
+                         </div>
+                         
+                         <div class="col-sm-12 up-frm">
+                            <label>Tag Line <span>(required)</span></label>
+                            <input type="text" placeholder="Tag Line">
+                         </div>
+                         
+                    </div>
+                    </div>
+                    
+                    <div class="up-frm rht-aln col-sm-12">
+                         <button>Cancel</button>
+                         <input type="submit" value="Next">
+                    </div>
+                    
+                </div>
+            </div>
+         </form>
+         </div>
+         
+         <div ng-show="tab === 2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="cover" ng-controller="pbController">
+                             <h4>Professional Background</h4>
+                             <div class="ad-pb"><a ng-click="addItem()">+ Add Company</a></div>
+                             <div class="row bx-rw" ng-repeat="item in items">{{items.rw}}
+                                 <div class="col-sm-4 up-frm">
+                                     <label>Company Name</label>
+                                     <input type="text" placeholder="Company Name">
+                                 </div>
+                                 
+                                 <div class="col-sm-4 up-frm">
+                                     <label>Desination</label>
+                                     <input type="text" placeholder="Desination">
+                                 </div>
+                                 
+                                 <div class="col-sm-2 up-frm">
+                                     <label>Month</label>
+                                     <input type="text" placeholder="Month">
+                                 </div>
+                                 
+                                 <div class="col-sm-2 up-frm">
+                                     <label>Year</label>
+                                     <input type="text" placeholder="Year">
+                                 </div>
+                                 
+                                 <div class="col-xs-12">
+                                     <button class="remove" ng-click="removeItem($index)">Remove</button> 
+                                 </div>
+                                  
+                             </div>
+                             
+                             
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <div class="cover">
+                             <h4>Social Share</h4>
+                             <div class="scl-ic">
+                                 <ul>
+                                    <li><a href="#"><i class="fa fa-facebook-square"></i><span>Facebook</span></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter-square"></i><span>Twitter</span></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin-square"></i><span>Linkedin</span></a></li>
+                                 </ul>
+                             </div>
+                        </div>
+                    </div>
+                
+                </div>
+                
+                
+                <div class="row">    
+                    <div class="col-sm-8">
+                        <div class="cover" ng-controller="pbController">
+                             <h4>Academic Background</h4>
+                             <div class="ad-pb"><a ng-click="addItem()">+ Add School</a></div>
+                             <div class="row bx-rw" ng-repeat="item in items">{{items.rw}}
+                                 <div class="col-sm-4 up-frm">
+                                     <label>Add School</label>
+                                     <input type="text" placeholder="Add School">
+                                 </div>
+                                 
+                                 <div class="col-sm-4 up-frm">
+                                     <label>Course</label>
+                                     <input type="text" placeholder="Course">
+                                 </div>
+                                 
+                                 <div class="col-sm-2 up-frm">
+                                     <label>Month</label>
+                                     <input type="text" placeholder="Month">
+                                 </div>
+                                 
+                                 <div class="col-sm-2 up-frm">
+                                     <label>Year</label>
+                                     <input type="text" placeholder="Year">
+                                 </div>
+                                 
+                                 <div class="col-xs-12">
+                                     <button class="remove" ng-click="removeItem($index)">Remove</button> 
+                                 </div>
+                                  
+                             </div>
+                             
+                             
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <div class="cover">
+                            <h4>Recommendations</h4>
+                            <div class="ads-recmd">
+                                <button class="add" ng-click="isPopupVisble= true">Add Recommendation</button>
+                                <div ng-show="isPopupVisble">
+                                <div class="alertBg12" ng-click="isPopupVisble= false"></div>
+                                <div class="up-bg">
+                                     <div class="up-pp ad-rcmd">
+                                          <h4>Ask for Recommendation</h4>
+                                          <div class="container-fluid" ng-controller="pbController">
+                                         <div class="ad-pb"><a ng-click="addItem()">+ Add Recommendation</a></div>
+                                         <div class="row bx-rw" ng-repeat="item in items">{{items.rw}}
+                                             <div class="col-sm-12 up-frm">
+                                                 <label>Recommendation</label>
+                                                 <input type="text" placeholder="Recommendation">
+                                             </div>
+                                             
+                                             <div class="col-xs-12">
+                                                 <button class="remove" ng-click="removeItem($index)">Remove</button> 
+                                             </div> 
+                                              
+                                         </div>
+                                         
+                                         <div class="up-frm rht-aln col-sm-12">
+                                             <button>Cancel</button>
+                                             <input type="submit" value="Save">
+                                        </div>
+                             
+                             
+                                        </div>
+                                     </div>
+                                     <button class="cancel" ng-click="isPopupVisble= false;">X</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="up-frm rht-aln col-sm-12">
+                         <button>Cancel</button>
+                         <input type="submit" value="Next">
+                   </div>
+                    
+                </div>
+            </div>
+        </div>
+         
+         <div ng-show="tab === 3">
+             <div class="up-tb-hd"><h4>Let's start with the basic information</h4></div>
+             <form>
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-sm-12 up-frm">
+                             <label>Mini Resume</label>
+                             <textarea placeholder="Type here..."></textarea>
+                         </div>
+                         
+                         <div class="col-sm-12 skill-frm" ng-controller="addSkillsController">
+                        <div ng-submit="addSkill()">
+                             <label>Add skills</label>
+                             <input type="text" name="newSkill" ng-model="newSkill" />
+                             <button class="btn-ads" ng-disabled="skillsFrm.$invalid" ng-click="addSkill()"></button>
+                        
+                          <ul class="added-skill">
+                             <li ng-repeat="skill in skills" class="{'fadeOut' : skill.done}">
+                                <span class="fa fa-close closed" ng-click="deleteSkill($index)"></span>
+                                <span>{{skill.title}}</span>
+                             </li>
+                          </ul>
+                     </div>                     
+                 </div>
+                         
+                         <div class="col-sm-12 up-frm">
+                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+                             dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type 
+                             specimen book.</p>
+                         </div>
+                         
+                         <div class="col-sm-12 up-frm">
+                             <div class="row">
+                             <div class="checkbox col-sm-4">
+                                  <input id="box1" type="checkbox" />
+                                  <label for="box1"><span class="check-cnt">Secure Funding</span></label>
+                              </div>
+                              
+                              <div class="checkbox col-sm-4">
+                                  <input id="box2" type="checkbox" />
+                                  <label for="box2"><span class="check-cnt">Search Mentor OR Investor</span></label>
+                              </div>
+                              
+                               <div class="checkbox col-sm-4">
+                                  <input id="box3" type="checkbox" />
+                                  <label for="box3"><span class="check-cnt">Connect with similar profile</span></label>
+                              </div>
+                              </div>
+                              <div class="row">
+                              <div class="checkbox col-sm-4">
+                                  <input id="box4" type="checkbox" />
+                                  <label for="box4"><span class="check-cnt">Hire OR Book for job</span></label>
+                              </div>
+                              
+                              <div class="checkbox col-sm-4">
+                                  <input id="box5" type="checkbox" />
+                                  <label for="box5"><span class="check-cnt">Book for investment</span></label>
+                              </div>
+                              
+                              <div class="checkbox col-sm-4">
+                                  <input id="box6" type="checkbox" />
+                                  <label for="box6"><span class="check-cnt">Would like to mentor , enterprenure and startups</span></label>
+                              </div>
+                           </div>
+                     </div>
+                     
+                     <div class="up-frm rht-aln col-sm-12">
+                         <button>Cancel</button>
+                         <input type="submit" value="Next">
+                    </div>
+                     
+                 
+             </form>
+            </div>
+         
+           </div>
+     
+         </div>
+        
+        <div ng-show="tab === 4">
+            <div class="container">
+                <h4 class="tab-heading">Area of Experties</h4>
+                <div class="row">
+                     <div class="col-sm-12">
+                         <div class="cate">
+                             <ul>
+                                <li><a href="#">Categories <i class="fa fa-caret-down"></i></a>
+                                   <ul class="step-2">
+                                       <li><a href="#">Category 1</a>
+                                           <ul class="step-3">
+                                               <h4>Category 1</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                       
+                                       <li><a href="#">Category 2</a>
+                                           <ul class="step-3">
+                                               <h4>Category 2</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                       
+                                       <li><a href="#">Category 3</a>
+                                           <ul class="step-3">
+                                               <h4>Category 3</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                       
+                                       <li><a href="#">Category 4</a>
+                                           <ul class="step-3">
+                                               <h4>Category 4</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                       
+                                       <li><a href="#">Category 5</a>
+                                           <ul class="step-3">
+                                               <h4>Category 5</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                       
+                                       <li><a href="#">Category 6</a>
+                                           <ul class="step-3">
+                                               <h4>Category 6</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                       
+                                       <li><a href="#">Category 7</a>
+                                           <ul class="step-3">
+                                               <h4>Category 7</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                       
+                                       <li><a href="#">Category 8</a>
+                                           <ul class="step-3">
+                                               <h4>Category 8</h4>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                               <li><a href="#">Category</a></li>
+                                           </ul>
+                                       </li>
+                                   </ul>
+                                </li>
+                             </ul>
+                         </div>
+                     </div>
+                     
+                     <div class="sm-rw">
+                         <div class="col-sm-4 up-frm up-stp4">
+                             <label>Description</label>
+                             <textarea></textarea>
+                         </div>
+                         
+                         <div class="col-sm-8">
+                              <h4 class="tab-heading">Suitable Time's</h4>
+                              <div class="row">
+                    <div class="col-sm-6 up-frm">
+                         <label>Date</label>
+                         <input type="text" placeholder="Date">
+                     </div>
+                     
+                     <div class="col-sm-6 up-frm">
+                         <label>Time</label>
+                         <input type="text" placeholder="Time">
+                     </div>
+                     
+                     <div class="col-sm-6 up-frm">
+                         <label>Date</label>
+                         <input type="text" placeholder="Date">
+                     </div>
+                     
+                     <div class="col-sm-6 up-frm">
+                         <label>Time</label>
+                         <input type="text" placeholder="Time">
+                     </div>
+                     
+                     <div class="col-sm-6 up-frm">
+                         <label>Date</label>
+                         <input type="text" placeholder="Date">
+                     </div>
+                     
+                     <div class="col-sm-6 up-frm">
+                         <label>Time</label>
+                         <input type="text" placeholder="Time">
+                     </div>
+                     
+                </div>
+                         </div>
+                     </div>
+                     
+                     
+                      <div class="col-sm-4 up-frm">
+                         <label>Time Zone</label>
+                         <select>
+                            <option>--select--</option>
+                         </select>
+                     </div>
+                     
+                     <div class="col-sm-4 up-frm">
+                         <label>Add Rate</label>
+                         <select>
+                             <option>--select--</option>
+                         </select>
+                     </div>
+                     
+                      <div class="col-sm-4 up-frm">
+                         <label>Equity for one year commitment</label>
+                         <input type="text">
+                     </div>
+                     
+                      
+               <div class="up-frm rht-aln col-sm-12">
+                     <button>Cancel</button>
+                     <input type="submit" value="Next">
+                 </div>
+                     
+                </div>
+               
+                
+               
+             </div>
+        </div> 
+        
+        <div ng-show="tab === 5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4 class="tab-heading">Fund Overview</h4>
+                        <div class="row">
+                            <div class="col-sm-12 up-frm up-st5">
+                                <label>Fund Investment</label>
+                                <textarea placeholder="Fund Investment"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-sm-6">
+                        <h4 class="tab-heading">Fund Details</h4>
+                        <div class="row">
+                            <div class="col-sm-12 up-frm">
+                                <label>Fund Stage</label>
+                                <select>
+                                    <option>--select--</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-sm-12 up-frm">
+                                <label>Region Focus</label>
+                                <select>
+                                    <option>--select--</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-sm-12 up-frm">
+                                <label>Industry Focus</label>
+                                <select>
+                                    <option>--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>Are you part of Engagement ?</h4>
+                    </div>
+                    
+                    <div class="col-sm-4 up-frm">
+                        <label>Industry Focus</label>
+                        <select>
+                           <option>--select--</option>
+                           <option>Yes</option>
+                           <option>No</option>
+                        </select>
+                     </div>
+                     
+                      <div class="up-frm rht-aln col-sm-12">
+                     <button>Cancel</button>
+                     <input type="submit" value="Next">
+                 </div>
+                </div>
+                
+               
+                
+            </div>
+         </div>    
+
+</div>
+<!------------------------
+section close
+------------------------->    
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+
+
+</body>
+</html>
+

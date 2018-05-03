@@ -1,0 +1,620 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>HTML</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="css/main.css" rel="stylesheet" type="text/css" />
+	  <link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+      <link href="font/stylesheet.css" rel="stylesheet" type="text/css" />
+      <link href="css/owl.css" rel="stylesheet" type="text/css" />
+      <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+      <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+      
+   </head>
+   <body class="bg-31" ng-app="wishonaryApp">
+      <div class="header_top_share">
+        <ul>
+           <li><a class="f-1" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a class="tw-1" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+             <li><a class="g-1" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+              <li><a class="in-1" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+               <li><a class="yt-1" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li><a class="pct-1" href="#"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                 <li><a class="msg-1" href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+      <header>
+         <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <nav class="animenu">
+                  <label for="show-menu" class="show-menu"><img src="img/menu.png"/></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                    <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                      <li><a href="#"><span>News</span></a></li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                                
+                                 <div class="row">
+                                      <div class="col-sm-4 l1-bg">
+                                          <div class="l-3"><img src="img/l1-logo.png"></div>
+                                      </div>
+                                      <div class="col-sm-8 l2-bg">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">i would like to recive 4fashion latest news </label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+      </header>
+<!-----------------------------
+header end
+------------------------------>        
+    
+    <div class="slide">
+         <div class="img-ct"><img src="img/tp-slide.jpg"></div>
+         <div class="over-txt">
+             <div class="col-sm-7">
+                  <div class="lf-txt">
+                       <h1>Design Driven Nyc #14</h1>
+                       <p><strong>by</strong> Robert James</p>
+                  </div>
+             </div>
+             
+             <div class="col-sm-5">
+                 <div class="rs12 pull-right">
+                      <h3>WHEN & where</h3>
+                      <div class="o-ls">
+                          <ul>
+                             <li>Wednesday, March 2, 2016 10:00 AM to 11:00 PM</li>
+                             <li>Radisson Blu Water Garden Hotel Dhaka Ballroom Dhaka, Dhaka 1206 BD</li>
+                          </ul>
+                      </div>
+                      
+                      <div class="bl-bg">
+                           <div class="col-xs-6">
+                                <h5>START</h5>
+                                <p>10:00 AM</p>
+                           </div>
+                           <div class="col-xs-6">
+                                <h5>FINISH</h5>
+                                <p>05:00 PM</p>
+                           </div>
+                      </div>
+                      
+                      <div class="reg">
+                          <div class="col-xs-9"><p>registration</p></div>
+                          <div class="col-xs-3">
+                              <select class="dpr-12">
+                                  <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                                  <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                          </div>
+                      </div>
+                      
+                      <div class="cho">
+                          <button>Check out</button>
+                      </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+<!-----------------------------
+slider end
+------------------------------>
+<div class="clearfix"></div>
+<div class="section5 container">
+<div class="col-sm-6 rh-brd">
+     <h4 class="md-heading">Media</h4>
+     <div class="owl-carousel gs">
+         <div><img src="img/sp1.png"></div>
+          <div><img src="img/sp2.png"></div>
+           <div><img src="img/sp3.png"></div>
+            <div><img src="img/sp4.png"></div>
+             <div><img src="img/sp5.png"></div>
+              <div><img src="img/sp6.png"></div>
+       </div>
+</div>
+
+<div class="col-sm-6">
+<h4 class="md-heading">Partners</h4>
+     <div class="owl-carousel gs">
+         <div><img src="img/sp7.png"></div>
+          <div><img src="img/sp8.png"></div>
+           <div><img src="img/sp9.png"></div>
+            <div><img src="img/sp4.png"></div>
+             <div><img src="img/sp5.png"></div>
+              <div><img src="img/sp6.png"></div>
+       </div>
+</div>
+
+</div>  
+
+<div class="container section1">
+    <div class="sc-icon">
+         <ul>
+            <li><img src="img/wishlist.png"></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+         </ul>
+    </div>
+    
+    <h5>ABOUT design driven nyt #14</h5>
+    <p>The idea behind this show was to provide a platform to the denim industry in this region where the entire supply chain players from mills, fiber and chemical suppliers , garment manufacturers , retailers, buying houses, brands etc could get together and help in the further development of the denim industry here. We are bringing serious players in the entire supply chain together so that serious business can be conducted in a denimish ambience. Denim Playground - Our driving theme for this show would be the playful, the athletic , the sporty nature of denim. Following the athleisure trend, there is an increasing focus to create denim which is soft, comfortable, strong and stretchy . Our exhibitors create products which bring various products to cater to buyer requirements for this trend.</p>
+   <!-- <p class="x-sp">Note: For offline and bank payments, kindly use the following form.</p>
+    <p>Follow us at Social Media with the official hashtag: #GOAB</p>
+    <div class="lnks">
+        <ul>
+            <li>witter: <a href="#">@geeksonabeach</a></li>
+            <li>Facebook: <a href="#">fb.com/url</a></li>
+            <li>Instagram: <a href="#">instagram.com/url</a></li>
+            <li>Website: <a href="#">www.address.com</a></li>
+        </ul>
+    </div>
+    
+    <div class="l-btn">
+        <ul>
+           <li>Tags :</li>
+           <li class="active"><a href="#">nature</a></li>
+            <li><a href="#">adventure</a></li>
+             <li><a href="#">food</a></li>
+              <li><a href="#">photography</a></li>
+               <li><a href="#">travels</a></li>
+        </ul>
+    </div>
+    -->
+    <h5 class="pds-r">ABOUT THE ORGANIZER</h5>
+<div class="row">
+    <div class="col-sm-4">
+          <article class="caption caption21">
+          <img src="img/sp-012.jpg">
+          <div class="caption__overlay">
+            <h1 class="caption__overlay__title">LOREM IPSUM<span>A veteran in the web world.</span></h1>
+            <div class="caption__overlay__content">
+            <p>A veteran in the web world. Driven by building successful companies which have business impact and a global reach.</p>
+            <div class="social stm">
+                 <a href="#"><i class="fa fa-facebook"></i></a> 
+                 <a href="#"><i class="fa fa-linkedin"></i></a>
+                 <a href="#"><i class="fa fa-google-plus"></i></a>
+             </div>
+            </div>
+        </div>
+    </article>
+    </div>
+    
+    <div class="col-sm-4">
+          <article class="caption caption21">
+          <img src="img/sp-013.jpg">
+          <div class="caption__overlay">
+            <h1 class="caption__overlay__title">LOREM IPSUM<span>A veteran in the web world.</span></h1>
+            <div class="caption__overlay__content">
+            <p>A veteran in the web world. Driven by building successful companies which have business impact and a global reach.</p>
+            <div class="social stm">
+                 <a href="#"><i class="fa fa-facebook"></i></a> 
+                 <a href="#"><i class="fa fa-linkedin"></i></a>
+                 <a href="#"><i class="fa fa-google-plus"></i></a>
+             </div>
+            </div>
+        </div>
+    </article>
+    </div>
+    
+    
+     <div class="col-sm-4">
+          <article class="caption caption21">
+          <img src="img/sp-013.jpg">
+          <div class="caption__overlay">
+            <h1 class="caption__overlay__title">LOREM IPSUM<span>A veteran in the web world.</span></h1>
+            <div class="caption__overlay__content">
+            <p>A veteran in the web world. Driven by building successful companies which have business impact and a global reach.</p>
+            <div class="social stm">
+                 <a href="#"><i class="fa fa-facebook"></i></a> 
+                 <a href="#"><i class="fa fa-linkedin"></i></a>
+                 <a href="#"><i class="fa fa-google-plus"></i></a>
+             </div>
+            </div>
+        </div>
+    </article>
+    </div>
+    
+</div>
+</div>
+
+<!----------------------------
+section1 end
+------------------------------>
+<div class="clearfix"></div>  
+<div class="container section2">
+    <h5>see you at</h5>
+    <p><img src="img/loc.png">&nbsp;Radisson Blu Water Garden Hotel Dhaka - Ballroom Dhaka, Dhaka 1206 BD</p>
+    <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448187.67607343756!2d76.81055905136719!3d28.64575590410748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+    1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew+Delhi%2C+Delhi+110001!5e0!3m2!1sen!2sin!4v1462490686012" width="100%" height="400" 
+    frameborder="0" style="border:0" allowfullscreen></iframe></div>
+</div>
+
+<!----------------------------
+section2 end
+------------------------------> 
+<!--<div class="clearfix"></div>  
+<div class="container section4">
+    
+
+
+</div>-->
+<!----------------------------
+section4 end
+------------------------------>   
+<div class="clearfix"></div>  
+<div class="container section3">
+    <h5>ABOUT THE ORGANIZER</h5>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="al-cover">
+            <div class="lp"><img src="img/lp.png"></div>
+            <div class="cnt-12">
+                <h4>TrendyTheme LLC</h4>
+                <p>new york, usa</p>
+            </div>
+             <div class="sc-icon mn-m">
+                 <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                 </ul>
+            </div>
+            
+            <div class="p-c">
+                <a href="#">profile</a>
+                <a class="active" href="#">Contact</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <p>Distinctively provide access to cross functional methodologies whereas market-driven e-business. Intrinsicly coordinate sticky schemas rather than extensible alignments. Conveniently negotiate just in time quality vectors vis-a-vis web-enabled users. Energistically maximize vertical convergence after top-line partnerships. Progressively synthesize competitive applications after open-source communities. Progressively create next-generation models through progressive synergy. Compellingly fashion go forward intellectual capital with multimedia based models. Completely grow next-generation networks without B2B portals.</p>
+            
+         <p>Globally benchmark pandemic ROI before market positioning e-markets. Assertively grow intermandated core competencies without functional content.Quickly engage scalable action items vis-a-vis standards compliant partnerships</p>
+        </div>
+    </div>
+</div>
+
+
+<!----------------------------
+section3 end
+------------------------------> 
+
+
+
+      <footer>
+        <div class="container">
+         
+          <div class="row ft-nav">
+            
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>Investor</h2>
+           
+               <li><a href="#">Browse investment oppportunities tools services</a></li>
+                <br>
+               <h2>About</h2>
+               <li><a href="#">The Company</a></li>
+                 <li><a href="#">Management team</a></li>
+                   <li><a href="#">Press centre</a></li>
+                     <li><a href="#">Carrer</a></li>
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>ENTREPRENEUR</h2>
+           
+               <li><a href="#">Post your startup</a></li>
+                 <li><a href="#">Browse Investors</a></li>
+                   <li><a href="#">Tools and services</a></li>
+                     <li><a href="#">Post Jobs</a></li> <br>
+
+                     <h2>Workshops & Events</h2>
+                        <li><a href="#">upcoming workshops</a></li>
+                     
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>Legal and Compliance</h2>
+           
+               <li><a href="#">Terms and Condition</a></li>
+                 <li><a href="#">Privacy Policy</a></li>
+                   <li><a href="#">Risk and Warning</a></li>
+                     <li><a href="#">Disclaimer</a></li> <br>
+
+                     <h2>Support</h2>
+                        <li><a href="#">Learning Centere</a></li>
+                           <li><a href="#">Blog</a></li>
+                              <li><a href="#">Contact us</a></li>
+                                 <li><a href="#">Report Bug</a></li>
+                               
+                     
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3">
+          
+           
+           
+
+            <h2>Follow us</h2>
+            <div class="social">
+     <a href="#"><i class="fa fa-facebook"></i></a> 
+     <a href="#"><i class="fa fa-twitter"></i></a>
+     <a href="#"><i class="fa fa-google-plus"></i></a>
+     <a href="#"><i class="fa fa-instagram"></i></a>
+       </div>  <br>
+
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter</p>
+            
+            <form class="nst1">
+              <input type="text" class="nlt" placeholder="Email"/>
+              <button class="nlt-sbt"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+            </form>
+
+            </div>
+          </div>
+       
+          
+           
+          
+        </div>
+        
+      
+      
+      </footer>
+      <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+        <p>Copyright@2016wishonary PVT.LTD. All right Reserved.<p>
+        </div>
+      </div>
+      </div>
+      
+      
+      <!--  Header  END  -->
+      <!--   Slider  -->
+      <!--  Script  -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/owl.js"></script>
+      <script>
+         var owl = $('.owl-carousel');
+				owl.owlCarousel({
+					items:4,
+					loop:true,
+					margin:10,
+					autoplay:true,
+					autoplayTimeout:1000,
+					autoplayHoverPause:true
+				});
+				$('.play').on('click',function(){
+					owl.trigger('autoplay.play.owl',[1000])
+				})
+				$('.stop').on('click',function(){
+					owl.trigger('autoplay.stop.owl')
+				})
+       </script>
+      <script type="text/javascript">
+			var SITE = SITE || {};
+			
+			SITE.fileInputs = function() {
+			  var $this = $(this),
+				  $val = $this.val(),
+				  valArray = $val.split('\\'),
+				  newVal = valArray[valArray.length-1],
+				  $button = $this.siblings('.button'),
+				  $fakeFile = $this.siblings('.file-holder');
+			  if(newVal !== '') {
+				$button.text('Choose File ');
+				if($fakeFile.length === 0) {
+				  $button.after('<span class="file-holder">' + newVal + '</span>');
+				} else {
+				  $fakeFile.text(newVal);
+				}
+			  }
+			};
+			
+			$(document).ready(function() {
+			  $('.file-wrapper input[type=file]').bind('change focus click', SITE.fileInputs);
+			});
+       </script>
+      <script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+      <!--  Script END  -->
+   </body>
+</html>

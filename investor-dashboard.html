@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp">
+
+<div class="wrapper dash">
+   <header class="fx-header">
+       <div class="container-fluid">
+                <div class="logo">
+                    <a href="#home">
+                        <img src="img/l1-logo.png">
+                    </a>
+                </div>
+                
+                <nav>
+                    <!-- Nav List -->
+                    <ul id="submenu" class="lista-menu aln-centro">
+                        <li><a href="#"><i class="fa fa-th-list"></i> News Feed</a></li>
+                        <li><a href="#"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs</a></li>
+                        <li><a href="#"><i class="fa fa-paint-brush" aria-hidden="true"></i> Workshops</a></li>
+                        <li class="sn-lgn"><a href="#"><i class="fa fa-user ui"></i>My Profile <span class="ard"><img src="img/ard.png"></span></a></li>
+                    </ul>
+                    <!-- End Nav List -->
+                </nav>
+       
+        </div>
+   </header>
+    
+<!------------------------
+header close
+------------------------->  
+<div class="clearfix"></div>     
+<div class="container mn-fx">
+  
+</div>
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+
+
+</body>
+</html>
+

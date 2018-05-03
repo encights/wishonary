@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp">
+
+<div class="wrapper dash">
+   <header class="fx-header">
+       <div class="container-fluid">
+                <div class="logo">
+                    <a href="#home">
+                        <img src="img/l1-logo.png">
+                    </a>
+                </div>
+                
+                <nav>
+                    <!-- Nav List -->
+                    <ul id="submenu" class="lista-menu aln-centro">
+                        <li><a href="#"><i class="fa fa-th-list"></i> News Feed</a></li>
+                        <li><a href="#"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs</a></li>
+                        <li><a href="#"><i class="fa fa-paint-brush" aria-hidden="true"></i> Workshops</a></li>
+                        <li class="sn-lgn"><a href="#"><i class="fa fa-user ui"></i>My Profile <span class="ard"><img src="img/ard.png"></span></a></li>
+                    </ul>
+                    <!-- End Nav List -->
+                </nav>
+       
+        </div>
+   </header>
+    
+<!------------------------
+header close
+------------------------->  
+<div class="clearfix"></div>     
+<div class="container mn-fx">
+    <h3>Post a Job</h3>
+    <div class="row">
+        
+        <div class="col-sm-8">
+        <div class="jb-wrap">
+            <form action="" method="get">
+                <div class="row">
+                     <div class="col-sm-8 col-xs-12 jb-frm">
+                         <label>Company</label>
+                         <input type="text" placeholder="Enter Name">
+                     </div>
+                     
+                      <div class="col-sm-8 col-xs-12 jb-frm">
+                         <label>Job Title</label>
+                         <input type="text" placeholder="Enter Job Title">
+                     </div>
+                     
+                     <div class="col-sm-8 jb-frm">
+                         <label>Job Banner</label>
+                         <div class="fileinput upload-drs fileinput-new" data-provides="fileinput">
+                            <span class="btn btn-default drs-btn btn-file"><span>Choose file</span><input type="hidden"><input type="file"></span>
+                            <span class="fileinput-filename"></span><span class="fileinput-new">No file chosen</span>
+                         </div>
+                     </div>
+                     
+                     <div class="col-sm-8 col-xs-12 jb-frm">
+                         <label>Job Description</label>
+                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                         <textarea></textarea>
+                     </div>
+                     
+                     <div class="col-sm-8 jb-frm">
+                         <label>Location</label>
+                         <div class="row">
+                            <div class="col-sm-4 col-xs-12"><select><option>--Select--</option></select></div>
+                            <div class="col-sm-8 col-xs-12"><input type="text" placeholder="City or State"></div>
+                         </div>
+                     </div>
+                     
+                     <div class="col-sm-8 jb-frm">
+                         <label>Job Type <a href="#">(Optional)</a></label>
+                         <select><option>--Select--</option></select>
+                     </div>
+                     
+                      <div class="col-sm-8 jb-frm">
+                         <label>Salary <a href="#">(Optional)</a></label>
+                         <div class="row">
+                              <div class="col-sm-1 col-xs-1"><span class="dlr">$</span></div>
+                              <div class="col-sm-4 col-xs-11"><input type="text"></div>
+                              <div class="col-sm-3 col-xs-12"><select><option>--Select--</option></select></div>
+                         </div>
+                     </div>
+                     
+                     
+                 </div>
+            </form>
+        </div>
+        </div>
+        
+        
+        <div class="col-sm-4">
+             <div class="jb-wrap">
+                 <div class="row">
+                       <div class="col-sm-12 jb-frm">
+                         <label>Job Logo</label>
+                         <div class="fileinput upload-drs fileinput-new" data-provides="fileinput">
+                            <span class="btn btn-default drs-btn btn-file"><span>Choose file</span><input type="hidden"><input type="file"></span>
+                            <span class="fileinput-filename"></span><span class="fileinput-new">No file chosen</span>
+                         </div>
+                       </div>
+                      
+                 
+                      <div class="col-sm-12 jb-frm">
+                         <label>Experience</label>
+                         <div class="row">
+                             <div class="col-sm-7"><input type="text"></div>
+                             <div class="col-sm-5"><select><option>--Select--</option></select></div>
+                         </div>
+                     </div>
+                     
+                     <div class="clearfix"></div>
+                     
+                     <div class="col-sm-12 jb-frm">
+                         <label>Education label <a href="#">(Optional)</a></label>
+                         <select><option>--Select--</option></select>
+                     </div>
+                     
+                 </div>
+             </div>
+             
+             <div class="continue">
+                 <button>Continue</button>
+             </div>
+             
+        </div>
+        
+    </div>
+</div>
+
+</div>
+
+ <script src="js/jquery.min.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/file-upload.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+
+
+</body>
+</html>
+

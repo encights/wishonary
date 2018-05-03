@@ -1,0 +1,551 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Html</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/responsive.css" type="text/css" rel="stylesheet">
+<link href="fonts/stylesheet.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="fonts/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="wishonaryApp" style="background-color:#FFF;">
+
+<div class="wrapper">
+   <header>
+       <div class="container">
+            <div class="row">
+               <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"/></a></div>
+               <!--  nav  -->
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+               <nav id="navbar" class="animenu navbar-collapse collapse">
+                  <label for="show-menu" class="show-menu"><span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span></label>
+                  <input type="checkbox" id="show-menu" role="button">
+                  <ul id="menu" class="pull-right">
+                  <li><a href="#"><span>Investors</span></a></li>
+                  <li><a href="#"><span>ENTREPRENEUR</span></a></li>
+                  <li><a href="#"><span>News</span></a></li>
+                  <li ng-controller="popupController"><a href="#"><span>Help</span></a>
+                      <ul class="drp-tp">
+                         <li><a href="#" ng-click="isPopupVisble()">Tour this page</a></li>
+                      </ul>
+                      <div ng-show="showPopup">
+                         <div class="alertBg12" data-ng-click="hidePrompt()"></div>
+                         <div class="ttp" data-ng-click="hidePrompt()">
+                             <div class="container">
+                                 <div class="tp-l"><img src="img/ar-1.png"><p>Lorem Ipsum is simply</p></div>
+                                 <div class="tp-m"><img src="img/ar-3.png"><p>Lorem Ipsum</p></div>
+                                 <div class="tp-r"><img src="img/ar-2.png"><p>Lorem Ipsum dolor</p></div>
+                                 <button class="ogt">Okay. Got it.</button>
+                             </div>
+                         </div>
+                       </div>
+                  </li>
+             
+                      <li><div class="ser-tp">
+                      <form>
+                      <input type="text" placeholder="Search..."/>
+                      <button class="sbt-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                      
+                      </div></li>
+                     
+                     <li>
+                        <div ng-controller="popupController"  >
+                        <div id="flag"><a href="#" ng-click="isPopupVisble()">Login</a></div>
+                      
+                           <div ng-show="showPopup">
+                              <div class="alertBg" data-ng-click="hidePrompt()"></div>
+                              <div class="animated bounceInUp login-pp container-fluid">
+                                
+                                 <div class="row">
+                                      <div class="col-sm-12">
+                                          <div ng-init="tab = 1" class="tab" >
+                                    
+                                    <div ng-show="tab === 1" class="lg-bg">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                         
+                                            
+                                                <div class="log-in" >
+                                                  <h1><span>Returning customer</span></h1>
+                                                   <div class="fer"><input type="text" placeholder="Name" name="name" /></div>
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                                 
+                                                   <div class="clearfix"></div>
+                                                     <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Remember me</label>
+  </div>
+  
+ <div class="clearfix"></div>
+  <p> <a class="fbtn"  ng-click="tab = 3"  ng-class="{active:tab===3}"><i class="frt">Forgot Password</i></a>	</p>
+                                                   <input type="submit" value="login"/ class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button >   
+                                                        </div>
+                                                   </div>
+                                                   
+                                                   <div class="tab-footer"><a class="fbtn" ng-click="tab = 2" ng-class="{active:tab===2}">
+NEW CUSTOMER</a> </div>
+                                                   
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                           
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div ng-show="tab === 2" class="tab-ctr lg-bg-w">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>New customer</span></h1>
+                                                    <div class="row">
+                                                <div class="rd1">
+                                                  <p>
+                                                    <input type="radio" id="test5" name="radio-group" checked>
+                                                    <label for="test5">Investors</label>
+                                                  </p>
+                                                  
+                                                   <p>
+                                                    <input type="radio" id="test4" name="radio-group">
+                                                    <label for="test4">Entrepreneur</label>
+                                                  </p>
+                                                  <p>
+                                                    <input type="radio" id="test3" name="radio-group">
+                                                    <label for="test3"> Mentors</label>
+                                                  </p>
+                                                </div>
+                                                    
+                                                <div class="col-sm-6">
+                                                    <div class="fer"><input type="text" placeholder="First name" name="name" /></div>
+                                                </div>
+                                                
+                                                 <div class="col-sm-6"> 
+                                                     <div class="fer"><input type="text" placeholder="Last name" name="last name" /></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="col-sm-12"> 
+                                                     <div class="fer"><input type="email" placeholder="Email" name="Email" /></div>
+                                                </div>
+                                                  <div class="clearfix"></div>
+                                                  
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="Passwd" type="password"placeholder="Password" ></div>
+                                              </div>
+                                              <div class="clearfix"></div>
+                                              
+                                              <div class="col-sm-12"> 
+                                                   <div class="fer"><input id="Passwd" name="confirm Passwd" type="password" placeholder="Confirm Password" >
+                                              </div></div>
+                                             
+                                              </div>
+                                            
+                                  
+                                                   <div class="clearfix"></div>
+                                                   <p>My registering your details you agree to our terms and condtions and privacy and cookie policay</p>
+                                                     <div>
+                                                      <input type="checkbox" id="test2" />
+                                                        <label for="test2">i would like to recive 4fashion latest news </label>
+                                                        </div>
+                                                   <input type="submit" value="Create my account" class="smt lg"  >
+                                                   <h2><img src="img/or.png"/></h2>
+                                                   <div class="ssl">
+                                                      <div class="s-ddr"><button class="fc"><i class="fa fa-facebook-f"></i></button></div>
+                                                      <div class="s-ddr"><button class="g-p"><i class="fa fa-google-plus"></i></button></div>
+                                                      <div class="s-ddr"> <button class="l-i"><i class="fa fa-twitter"></i></button > </div>
+                                                   </div>
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                  
+                                                </div>
+                                             </div>
+                                          </form>
+                                      
+                                    </div>
+                                    </div>
+                                    <div ng-show="tab === 3">
+                                       <div class="login">
+                                          <form  method="post" action="">
+                                             <div class="col-sm-12">
+                                                <div class="log-in" >
+                                                <h1><span>Forgot Password</span></h1>
+                                                   <div class="fer">    <input type="text" placeholder="email" name="emial" class="form-control error"/></div>
+                                                   <div class="fer"> <input id="Passwd" name="Passwd" type="password" class="form-control error"placeholder="Password" ></div>
+                                                   <input type="submit" value="Send link"/ class="smt lg"  >
+                                                   <div class="tab-footer"> <a class="fbtn"  ng-click="tab = 1"  ng-class="{active:tab===1}">
+                                                   RETURNING CUSTOMER</a></div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <button id="btnCanceRemove" class="cancel" tabindex="2" data-ng-click="hidePrompt()">X</button>
+                                 </div>
+                                      </div>
+                                 
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               <!--  nav END  -->
+            </div>
+         </div>
+   </header>
+    
+<!------------------------
+header close slider open
+------------------------->
+<div class="clearfix"></div>
+<div class="slide-cnt">
+    <div id="particle-canvas"></div>
+    <div class="iner-sect">
+        <div class="hero-section">
+             <div class="hero-inside">
+                  <h1 class="hero-title">Create Your StartUp Story</h1>
+              </div>
+              
+              <div class="homepage">
+                  <form method="post">
+                  <div class="mc4wp-form-fields">
+                       <p class="fltr-tx">We connect Entrepreneurs with the resources they need most- People, 
+                       Capital, & Advice.</p>
+                       
+                       <div class="fltr">
+	                     <input type="email" name="EMAIL" placeholder="Search startups, investors, or new partners" required>
+                         <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                       </div>
+
+                    </form>
+                    </div>
+              </div>
+          </div>
+      </div>
+</div>
+<!------------------------
+slider close category 
+------------------------->  
+<div class="clearfix"></div>     
+<div class="container stp">
+    <div class="row">      
+       <h3 class="exc">Explore Categories</h3>
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/entrepreneurship.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/entrepreneurship-icon.png"></div>
+              <div class="homeTile-title">Entrepreneurship</div>
+          </div>
+       </a>
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/technology.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/technology.png"></div>
+              <div class="homeTile-title">Technology</div>
+          </div>
+       </a>
+       
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/prgm.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/prgm.png"></div>
+              <div class="homeTile-title">Programming</div>
+          </div>
+       </a>
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/design.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/design.png"></div>
+              <div class="homeTile-title">Design</div>
+          </div>
+       </a>
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/movies.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/movie-icon.png"></div>
+              <div class="homeTile-title">Movies</div>
+          </div>
+       </a>
+       
+        <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/culture.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/culture-icon.png"></div>
+              <div class="homeTile-title">Culture</div>
+          </div>
+       </a>
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/gaming.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/gaming-icon.png"></div>
+              <div class="homeTile-title">Gaming</div>
+          </div>
+       </a>
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/music.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/music-icon.png"></div>
+              <div class="homeTile-title">Music</div>
+          </div>
+       </a>
+	   
+       <div id="target">
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/social.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/social.png"></div>
+              <div class="homeTile-title">Social</div>
+          </div>
+       </a>
+      
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/writing.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/writing-icon.png"></div>
+              <div class="homeTile-title">Writing</div>
+          </div>
+       </a>
+      
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/health.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/health.png"></div>
+              <div class="homeTile-title">Health</div>
+          </div>
+       </a>
+      
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/photography.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/photography.png"></div>
+              <div class="homeTile-title">Photography</div>
+          </div>
+       </a>
+      
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/faimly.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/family.png"></div>
+              <div class="homeTile-title">Faimly</div>
+          </div>
+       </a>
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/lifestyle.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/lifestyle-icon.png"></div>
+              <div class="homeTile-title">Lifestyle</div>
+          </div>
+       </a>
+       
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/art.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/art-icon.png"></div>
+              <div class="homeTile-title">Art</div>
+          </div>
+       </a>
+      
+       <a class="homeTile" href="#">
+          <div class="homeTile-content" style="background-image:url(img/fashion.jpg);">
+              <div class="homeTile-background"></div>
+              <div class="homeTile-icon"><img src="img/fashion.png"></div>
+              <div class="homeTile-title">Fashion</div>
+          </div>
+       </a>
+       
+       </div>
+       
+       <div class="shw-btns">
+            <button class="Show">Show more...</button>
+            <button class="Hide">Show less...</button>
+       </div>
+     
+</div>
+</div>
+<!------------------------
+category close ftr
+------------------------->  
+<div class="clearfix"></div>
+<div class="container-fluid s-ft">
+     <div class="container ft-cnt">
+         <h1>The Craziest thing you could do is nothing</h1>
+         <p>Imagine the possibilities if you start today</p>
+         <button>Create your business</button>
+     </div>
+</div>
+
+<div class="container-fluid s-ft">
+    <!-- <div class="container ft-cnt2">
+         <h3>Not ready to start just yet? Subscribe to your blog</h3>
+         <div class="nws-ltr">
+              <input type="text" placeholder="Email address">
+              <input type="submit" value="Get updates">
+         </div>
+         <h4>No charge. Unsubscribe anytime.</h4>
+     </div>-->
+</div>
+<!--------------------------
+footer start
+---------------------------->
+<footer>
+        <div class="container">
+            <div class="row ft-nav">
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>Investor</h2>
+           
+               <li><a href="#">Browse investment oppportunities tools services</a></li>
+                <br>
+               <h2>About</h2>
+               <li><a href="#">The Company</a></li>
+                 <li><a href="#">Management team</a></li>
+                   <li><a href="#">Press centre</a></li>
+                     <li><a href="#">Carrer</a></li>
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>ENTREPRENEUR</h2>
+           
+               <li><a href="#">Post your startup</a></li>
+                 <li><a href="#">Browse Investors</a></li>
+                   <li><a href="#">Tools and services</a></li>
+                     <li><a href="#">Post Jobs</a></li> <br>
+
+                     <h2>Workshops &amp; Events</h2>
+                        <li><a href="#">upcoming workshops</a></li>
+                     
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3 ft-nav">
+             <ul>
+             <h2>Legal and Compliance</h2>
+           
+               <li><a href="#">Terms and Condition</a></li>
+                 <li><a href="#">Privacy Policy</a></li>
+                   <li><a href="#">Risk and Warning</a></li>
+                     <li><a href="#">Disclaimer</a></li> <br>
+
+                     <h2>Support</h2>
+                        <li><a href="#">Learning Centere</a></li>
+                           <li><a href="#">Blog</a></li>
+                              <li><a href="#">Contact us</a></li>
+                                 <li><a href="#">Report Bug</a></li>
+                               
+                     
+             
+             </ul>
+            
+            </div>
+            <div class="col-sm-3">
+          
+           
+           
+
+            <h2>Follow us</h2>
+            <div class="social">
+     <a href="#"><i class="fa fa-facebook"></i></a> 
+     <a href="#"><i class="fa fa-twitter"></i></a>
+     <a href="#"><i class="fa fa-google-plus"></i></a>
+     <a href="#"><i class="fa fa-instagram"></i></a>
+       </div>  <br>
+
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter</p>
+            
+            <form class="nst1 ng-pristine ng-valid">
+              <input type="text" class="nlt" placeholder="Email">
+              <button class="nlt-sbt"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+            </form>
+
+            </div>
+          </div>
+       
+          
+           
+          
+        </div>
+        
+      
+      
+      </footer>
+<div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+        <p>Copyright@2016wishonary PVT.LTD. All right Reserved.</p><p>
+        </p></div>
+      </div>
+      </div>
+<!---------------------------
+footer close
+---------------------------->
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/particle.js"></script>
+<script src="js/scrollbar.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/angular-simple-accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $(".sidebar-panel").toggleClass("menushow");
+  });
+});
+</script>
+
+<script type="text/javascript">
+ $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+</script>
+
+
+</body>
+</html>
+
